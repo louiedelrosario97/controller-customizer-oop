@@ -3,15 +3,23 @@ package com.pluralsight.models.parts;
 public class AnalogStick extends Part
 {
     private String stickType; // Joystick or CStick
+    private boolean isPainted;
 
+    private final double paintedPrice = 5.00;
+    private final double defaultPrice = 0.00;
 
-
-    public AnalogStick(String name, String color)
+    public AnalogStick(String name, String color, String stickType, boolean isPainted)
     {
-        super(name, color);
+        super(name, color, stickType, );
     }
 
     // Getters
     public String getStickType() { return stickType; }
+    public boolean isPainted() { return isPainted; }
+    public double getPaintedPrice() { return paintedPrice; }
+    public double getDefaultPrice() { return defaultPrice; }
+
+    @Override
+    public double getPrice() {}
 }
 
