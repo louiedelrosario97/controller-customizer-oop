@@ -23,3 +23,5 @@ public class AnalogStick extends Part
     public double getPrice() {}
 }
 
+// I may have to rename/create this class. Because we will be adding all the mods
+// into a List<Mod> to calculate the price. So we don't need boolean isPainted.
