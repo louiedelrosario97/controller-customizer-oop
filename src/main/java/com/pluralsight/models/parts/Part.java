@@ -26,5 +26,12 @@ public abstract class Part implements IPriceable
     // Abstract Method
     @Override
     public abstract double getPrice();
+
+    // Format for screens
+    @Override
+    public String toString()
+    {
+        return String.format("%s | Color: %s | $%.2f", name, color, getPrice());
+    }
 }
 
