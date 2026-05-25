@@ -1,0 +1,52 @@
+-------------------------------- [ IMPORTANT TASKS ] ---------------------------------------
+(empty for now)
+
+
+---------------------------------------- Features ---------------------------------------
+    - Homescreen launches at start
+    - User can choose between "Start new order" or "How it works"
+    - In a new order, user chooses base controller -> cosmetic customizations -> mods
+    - They can build multiple controllers in an order
+    - Add on purchases available (carrying case, controller stand, etc.)
+    - Can review order with price breakdown, enter payment info, confirm.
+    - Receipt info includes turnaround time info
+    - Application stores sales data to use as receipt info
+
+---------------------------------------- ! Bonus ideas ! ---------------------------------------
+    - Fully designed screens (colors, UI formatting etc.)
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+============================== modifications =========================================
+
+// ---------------------------------- Mod --------------------------------------
+// TODO: Create toString() for receipt formatting
+
+// ---------------------------------- NotchMod --------------------------------------
+// TODO:Create getPrice() logic
+// TODO : Variables,Constructor, Getter/Setter
+
+// ---------------------------------- SnapbackMod --------------------------------------
+// DONE: Create getPrice() logic
+// DONE: Variables,Constructor, Getter/Setter
+
+// ---------------------------------- TactileMod --------------------------------------
+// TODO:Create getPrice() logic
+// TODO : Variables,Constructor, Getter/Setter
+
+// ---------------------------------- TriggerMod --------------------------------------
+// TODO:Create getPrice() logic
+// TODO : Variables,Constructor, Getter/Setter
+
+============================== parts =========================================
+// ---------------------------------- Part --------------------------------------
+// TODO: Create toString() for receipt formatting
+
+// ---------------------------------- --------------------------------------
+// ---------------------------------- --------------------------------------
+// ---------------------------------- --------------------------------------
+// ---------------------------------- --------------------------------------
+// ---------------------------------- --------------------------------------
