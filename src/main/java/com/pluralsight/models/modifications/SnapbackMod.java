@@ -2,8 +2,10 @@ package com.pluralsight.models.modifications;
 // Snapback Capacitor Mod
 public class SnapbackMod extends Mod
 {
-    private String axis;
+    // Snapback Characteristics
+    private final String axis;
 
+    // Pricing variables
     private static final double horizontalPrice = 50.00;
     private static final double verticalPrice = 50.00;
     private static final double bothPrice = 75.00;
@@ -18,17 +20,13 @@ public class SnapbackMod extends Mod
 
     @Override
     public double getPrice() {
-        switch (axis.toLowerCase())
+        return switch (axis.toLowerCase())
         {
-            case "horizontal":
-                return horizontalPrice;
-            case "vertical":
-                return verticalPrice;
-            case "both":
-                return bothPrice;
-            default:
-                return 0.00;
-        }
+            case "horizontal" -> horizontalPrice;
+            case "vertical" -> verticalPrice;
+            case "both" -> bothPrice;
+            default -> 0.00;
+        };
     }
 }
 
