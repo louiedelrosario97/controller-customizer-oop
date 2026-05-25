@@ -16,24 +16,12 @@ public abstract class Part implements IPriceable
     }
 
     // Getters
-    public String getName() {
-        return name;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
+    public String getName() { return name; }
+    public String getColor() { return color; }
 
     // Setters
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
+    public void setName(String name) { this.name = name;}
+    public void setColor(String color) { this.color = color; }
 
     // Abstract Method
     @Override
