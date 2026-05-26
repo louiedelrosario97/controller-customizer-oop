@@ -1,7 +1,7 @@
 package com.pluralsight.models.controller;
 
 import com.pluralsight.models.modifications.Mod;
-import com.pluralsight.models.parts.Part;
+import com.pluralsight.models.cosmetic.Cosmetic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,21 +14,21 @@ public class Controller
     private final int id;
 
     // Lists (Blueprint)
-    private List<Part> parts;
+    private List<Cosmetic> cosmetics;
     private List<Mod> mods;
 
     public Controller(BaseController base, int id)
     {
         this.id = id;
         this.base = base;
-        this.parts = new ArrayList<>();
+        this.cosmetics = new ArrayList<>();
         this.mods = new ArrayList<>();
     }
 
     // Getters
     public BaseController getBase() { return base; }
     public int getId() { return id; }
-    public List<Part> getParts() { return parts; }
+    public List<Cosmetic> getParts() { return cosmetics; }
     public List<Mod> getMods() { return mods; }
 
     // Derived Getters

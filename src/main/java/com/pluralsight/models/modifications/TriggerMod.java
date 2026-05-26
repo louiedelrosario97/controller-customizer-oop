@@ -3,7 +3,7 @@ package com.pluralsight.models.modifications;
 public class TriggerMod extends Mod
 {
     // Trigger Mod Characteristics
-    private final String side;
+    private final String bumper;
 
     // Pricing variables
     private static final double leftPrice = 10.00;
@@ -14,16 +14,16 @@ public class TriggerMod extends Mod
     public TriggerMod(String side)
     {
         super(side);
-        this.side = side;
+        this.bumper = side;
     }
 
     // Getter
-    public String getSide() { return side; }
+    public String getBumper() { return bumper; }
 
     @Override
     public double getPrice()
     {
-        return switch (side.toLowerCase())
+        return switch (bumper.toLowerCase())
         {
             case "left" -> leftPrice;
             case "right" -> rightPrice;

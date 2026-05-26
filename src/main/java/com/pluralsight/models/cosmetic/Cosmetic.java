@@ -1,15 +1,15 @@
-package com.pluralsight.models.parts;
+package com.pluralsight.models.cosmetic;
 
 import com.pluralsight.interfaces.IPriceable;
 
-public abstract class Part implements IPriceable
+public abstract class Cosmetic implements IPriceable
 {
     // Variables
     String name;
     String color;
 
     // Constructor
-    public Part(String name, String color)
+    public Cosmetic(String name, String color)
     {
         this.name = name;
         this.color = color;

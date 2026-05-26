@@ -1,6 +1,6 @@
-package com.pluralsight.models.parts;
+package com.pluralsight.models.cosmetic;
 
-public class StickColor extends Part
+public class StickColor extends Cosmetic
 {
     private final String stickType;// Joystick or CStick
 
