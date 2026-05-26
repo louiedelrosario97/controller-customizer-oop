@@ -25,7 +25,7 @@ public class OrderScreen
 
             switch(input)
             {
-                case "1": buildScreen();    break;
+                case "1": BuildScreen.start();    break;
                 case "2": accessoryScreen();break;
                 case "3": checkOutScreen(); break;
                 case "4": cartDisplay();    break;

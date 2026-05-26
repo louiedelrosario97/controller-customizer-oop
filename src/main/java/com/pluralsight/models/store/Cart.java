@@ -8,8 +8,8 @@ import java.util.List;
 public class Cart
 {
     // List 'Order' can access
-    private List<Controller> controllers;
-    private List<Accessory> accessories;
+    private final List<Controller> controllers;
+    private final List<Accessory> accessories;
 
     // Constructor
     public Cart()
@@ -33,7 +33,7 @@ public class Cart
     // Need to use streams for this logic
     public double getCartTotal() // IC!
     {
-        double controllerTotal = controllers.stream() //
+        double controllerTotal = controllers.stream()
                 .mapToDouble(Controller::getPrice)
                 .sum();
 

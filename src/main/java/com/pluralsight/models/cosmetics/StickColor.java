@@ -5,7 +5,7 @@ import com.pluralsight.enums.StickSelect;
 public class StickColor extends Cosmetic
 {
     // Enum as a field type ( Guarantees valid enum values are stored )
-    private StickSelect stickSelect;
+    private final StickSelect stickSelect;
 
     private static final double price = 5.00;
 

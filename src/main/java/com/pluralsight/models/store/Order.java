@@ -11,7 +11,6 @@ public class Order
     private String orderStatus;
 
 
-
     // Constructor
     public Order(int orderId, Customer customer, String orderStatus)
     {
@@ -26,10 +25,11 @@ public class Order
     public int getOrderId() { return orderId; }
 
     // Derived Getter
+
+    private Cart cart;
     public double getOrderTotal()
-    { // Need to create a Cart class to add the values of all the items.
-        double total = 0;
-        return total; // Unfinished logic
+    {
+        return cart.getCartTotal();
     }
 
 }

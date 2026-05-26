@@ -1,13 +1,16 @@
 package com.pluralsight.ui.screens;
 
-import static com.pluralsight.ui.main.Main.orderScreen;
-import static com.pluralsight.ui.main.Main.scanner;
+import java.util.Scanner;
+
+import static com.pluralsight.ui.screens.OrderScreen.orderScreen;
 
 public class HomeScreen
 
 {
-    public static void homeScreen() {
-        String input;
+    public static Scanner scanner = new Scanner(System.in);
+
+    public static void homeScreen()
+    {
         boolean runningLoop = true;
         while (runningLoop)
         {
@@ -16,9 +19,11 @@ public class HomeScreen
             System.out.println("1) Create Order");
             System.out.println("0) Close");
             System.out.print("Select: ");
-            input = scanner.nextLine().strip();
 
-            switch (input) {
+            String input = scanner.nextLine().strip();
+
+            switch (input)
+            {
                 case "1":
                     orderScreen();
                     break;
