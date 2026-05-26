@@ -1,6 +1,6 @@
-package com.pluralsight.models.parts;
+package com.pluralsight.models.cosmetic;
 
-public class ButtonSet extends Part
+public class ButtonSetColor extends Cosmetic
 {
     private final String setColor;
 
@@ -8,7 +8,7 @@ public class ButtonSet extends Part
     private static final double price = 15.00;
 
     // Constructor
-    public ButtonSet(String setColor)
+    public ButtonSetColor(String setColor)
     {
         super("Button Set", setColor);
         this.setColor = setColor;
