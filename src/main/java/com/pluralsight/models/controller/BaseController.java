@@ -1,7 +1,7 @@
 package com.pluralsight.models.controller;
 
 import com.pluralsight.interfaces.IPriceable;
-// BaseController is not a Part, but still implements IPriceable
+// BaseController is not a Cosmetic, but still implements IPriceable
 public class BaseController implements IPriceable
 {
     // Variables
