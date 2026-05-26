@@ -2,7 +2,7 @@ package com.pluralsight.models.modifications;
 
 public class NotchMod extends Mod
 {
-    // Notch Characteristics
+    // NotchMod Characteristics
     private final String notchedTo;
 
     // Pricing Variables
@@ -11,15 +11,14 @@ public class NotchMod extends Mod
     private static final double bothPrice = 75.00;
 
     // Constructor
-    public NotchMod(String name, String notchedTo)
+    public NotchMod(String notchedTo)
     {
-        super("Stick Notch Mod");
+        super("Stick Notch Mod (" + notchedTo + ")"); // IC!
         this.notchedTo = notchedTo;
     }
 
     // Getter(s)
     public String getNotchedTo() { return notchedTo; }
-
 
     @Override
     public double getPrice()

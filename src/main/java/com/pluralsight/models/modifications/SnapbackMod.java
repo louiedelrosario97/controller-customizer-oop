@@ -3,7 +3,7 @@ package com.pluralsight.models.modifications;
 public class SnapbackMod extends Mod
 {
     // Snapback Characteristics
-    private final String axis;
+    private String axis;
 
     // Pricing variables
     private static final double horizontalPrice = 50.00;
