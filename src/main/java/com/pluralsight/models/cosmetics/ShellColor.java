@@ -1,4 +1,4 @@
-package com.pluralsight.models.cosmetic;
+package com.pluralsight.models.cosmetics;
 
 public class ShellColor extends Cosmetic
 {

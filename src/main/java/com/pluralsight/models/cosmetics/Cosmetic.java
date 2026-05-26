@@ -1,4 +1,4 @@
-package com.pluralsight.models.cosmetic;
+package com.pluralsight.models.cosmetics;
 
 import com.pluralsight.interfaces.IPriceable;
 

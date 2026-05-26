@@ -1,7 +1,7 @@
 package com.pluralsight.models.controller;
 
 import com.pluralsight.models.modifications.Mod;
-import com.pluralsight.models.cosmetic.Cosmetic;
+import com.pluralsight.models.cosmetics.Cosmetic;
 
 import java.util.ArrayList;
 import java.util.List;
