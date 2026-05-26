@@ -1,25 +1,26 @@
 package com.pluralsight.models.modifications;
 
-import static com.pluralsight.enums.SnapbackAxis.*;
+import com.pluralsight.enums.SnapbackAxis;
+
 
 // Snapback Capacitor Mod
 public class SnapbackMod extends Mod
 {
     // Snapback Characteristics
-    private String axis;
+    private SnapbackAxis axis;
 
     // Pricing variables
     private static final double horizontalPrice = 50.00;
     private static final double verticalPrice = 50.00;
     private static final double bothPrice = 75.00;
 
-    public SnapbackMod(String axis)
+    public SnapbackMod(SnapbackAxis axis)
     {
         super("Snapback Capacitor Mod");
         this.axis = axis;
     }
 
-    public String getAxis() { return axis; }
+    public SnapbackAxis getAxis() { return axis; }
 
     @Override
     public double getPrice() {
@@ -28,7 +29,6 @@ public class SnapbackMod extends Mod
             case HORIZONTAL -> horizontalPrice;
             case VERTICAL -> verticalPrice;
             case BOTH -> bothPrice;
-            default -> 0.00;
         };
     }
 }

@@ -1,13 +1,11 @@
 package com.pluralsight.models.modifications;
 
-import static com.pluralsight.enums.SnapbackAxis.BOTH;
-import static javax.swing.JSplitPane.LEFT;
-import static javax.swing.JSplitPane.RIGHT;
+import com.pluralsight.enums.BumperSide;
 
 public class TriggerMod extends Mod
 {
     // Trigger Mod Characteristics
-    private final String bumper;
+    private final BumperSide bumper;
 
     // Pricing variables
     private static final double leftPrice = 10.00;
@@ -15,24 +13,23 @@ public class TriggerMod extends Mod
     private static final double bothPrice = 20.00;
 
     // Constructor
-    public TriggerMod(String side)
+    public TriggerMod(BumperSide bumper)
     {
-        super(side);
-        this.bumper = side;
+        super("Trigger Mod(" + bumper + ")");
+        this.bumper = bumper;
     }
 
     // Getter
-    public String getBumper() { return bumper; }
+    public BumperSide getBumper() { return bumper; }
 
     @Override
     public double getPrice()
     {
-        return switch (bumper.toLowerCase())
+        return switch (bumper)
         {
             case LEFT -> leftPrice;
             case RIGHT -> rightPrice;
             case BOTH -> bothPrice;
-            default -> 0.00;
         };
     }
 }
