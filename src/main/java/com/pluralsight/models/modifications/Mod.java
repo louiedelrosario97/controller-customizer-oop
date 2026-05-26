@@ -5,7 +5,7 @@ import com.pluralsight.interfaces.IPriceable;
 public abstract class Mod implements IPriceable
 {
     // Mod Characteristic(s)
-    private String name;
+    private final String name;
 
     // Constructor
     public Mod(String name)

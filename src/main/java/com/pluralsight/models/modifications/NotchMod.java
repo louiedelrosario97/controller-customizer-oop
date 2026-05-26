@@ -1,5 +1,9 @@
 package com.pluralsight.models.modifications;
 
+import static com.pluralsight.enums.SnapbackAxis.BOTH;
+import static com.pluralsight.enums.StickSelect.C_STICK;
+import static com.pluralsight.enums.StickSelect.JOYSTICK;
+
 public class NotchMod extends Mod
 {
     // NotchMod Characteristics
@@ -25,9 +29,9 @@ public class NotchMod extends Mod
     {
         return switch (notchedTo.toLowerCase())
         {
-            case "joystick" -> joyStickPrice;
-            case "c-stick" -> cStickPrice;
-            case "both" -> bothPrice;
+            case JOYSTICK -> joyStickPrice;
+            case C_STICK -> cStickPrice;
+            case BOTH -> bothPrice;
             default -> 0.00;
         };
     }

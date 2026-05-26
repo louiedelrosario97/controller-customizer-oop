@@ -1,4 +1,7 @@
 package com.pluralsight.models.modifications;
+
+import static com.pluralsight.enums.SnapbackAxis.*;
+
 // Snapback Capacitor Mod
 public class SnapbackMod extends Mod
 {
@@ -20,11 +23,11 @@ public class SnapbackMod extends Mod
 
     @Override
     public double getPrice() {
-        return switch (axis.toLowerCase())
+        return switch (axis)
         {
-            case "horizontal" -> horizontalPrice;
-            case "vertical" -> verticalPrice;
-            case "both" -> bothPrice;
+            case HORIZONTAL -> horizontalPrice;
+            case VERTICAL -> verticalPrice;
+            case BOTH -> bothPrice;
             default -> 0.00;
         };
     }

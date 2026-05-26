@@ -1,5 +1,9 @@
 package com.pluralsight.models.modifications;
 
+import static com.pluralsight.enums.SnapbackAxis.BOTH;
+import static javax.swing.JSplitPane.LEFT;
+import static javax.swing.JSplitPane.RIGHT;
+
 public class TriggerMod extends Mod
 {
     // Trigger Mod Characteristics
@@ -25,9 +29,9 @@ public class TriggerMod extends Mod
     {
         return switch (bumper.toLowerCase())
         {
-            case "left" -> leftPrice;
-            case "right" -> rightPrice;
-            case "both" -> bothPrice;
+            case LEFT -> leftPrice;
+            case RIGHT -> rightPrice;
+            case BOTH -> bothPrice;
             default -> 0.00;
         };
     }
