@@ -6,23 +6,21 @@ import java.util.List;
 
 public class Order
 {
-    private int orderId;
-    private Customer customer;
+    private final int orderId;
+    private final Customer customer;
     private String orderStatus;
 
 
 
     // Constructor
-    public Order(int orderId, Customer customer, String orderStatus, List<Controller> controllers)
+    public Order(int orderId, Customer customer, String orderStatus)
     {
         this.orderId = orderId;
         this.customer = customer;
         this.orderStatus = orderStatus;
-        this.controllers = controllers;
     }
 
     // Getters
-    public List<Controller> getControllers() { return controllers; }
     public String getOrderStatus() { return orderStatus; }
     public Customer getCustomer() { return customer; }
     public int getOrderId() { return orderId; }
