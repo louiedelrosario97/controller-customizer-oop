@@ -1,0 +1,27 @@
+package com.pluralsight.models.accessory;
+
+import com.pluralsight.interfaces.IPriceable;
+
+public class Accessory implements IPriceable // CarryingCase, Controller stand
+{
+    private String name;
+    private double price;
+
+    // Constructor
+    public Accessory(String name, double price)
+    {
+        this.name = name;
+        this.price = price;
+    }
+
+    // Getters
+    public String getName() { return name; }
+
+    // Override
+    @Override
+    public double getPrice() { return price; }
+
+    @Override
+    public String toString() {}
+}
+
