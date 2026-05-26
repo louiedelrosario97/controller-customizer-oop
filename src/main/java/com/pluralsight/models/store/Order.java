@@ -10,9 +10,7 @@ public class Order
     private Customer customer;
     private String orderStatus;
 
-    // List 'Order' can access
-    private List<Controller> controllers;
-    // Should include a list of accessory addon products as well, make another class
+
 
     // Constructor
     public Order(int orderId, Customer customer, String orderStatus, List<Controller> controllers)
