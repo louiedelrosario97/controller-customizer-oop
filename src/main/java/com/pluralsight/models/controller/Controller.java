@@ -39,5 +39,10 @@ public class Controller
         // Add rest of logic later ~
         return cost;
     }
+
+    public double getPrice()
+    {
+        return 0;
+    }
 }
 
