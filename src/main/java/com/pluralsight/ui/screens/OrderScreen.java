@@ -30,7 +30,10 @@ public class OrderScreen
             switch(input)
             {
                 case "1": BuildScreen.start(); break;
-                case "2": accessoryScreen();   break;
+                case "2":
+                    Accessory selected = addAccessory();
+                    System.out.println("You selected: " + selected.getName());
+                    break;
 //                case "3": checkOutScreen();    break;
 //                case "4": cartDisplay();       break;
                 case "0": runningLoop = false; break;
@@ -39,7 +42,7 @@ public class OrderScreen
         }
 
     }
-    public static void accessoryScreen()
+    public static Accessory addAccessory()
     {
         System.out.println("\n Accessories ");
         System.out.println("-------------------");
@@ -49,14 +52,9 @@ public class OrderScreen
             System.out.println((i + 1) + ") " + accessories.get(i));
         }
         System.out.print("Select: ");
-        int selection = scanner.nextInt();
-        scanner.nextLine();
-        switch(selection)
-        {
+        int input = Integer.parseInt(scanner.nextLine().trim());
 
-        }
-
-        Accessory accessory = accessories.get(selection - 1);
+        return accessories.get(input - 1);
     }
 }
 
