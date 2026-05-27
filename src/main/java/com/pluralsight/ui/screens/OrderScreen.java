@@ -4,15 +4,17 @@ package com.pluralsight.ui.screens;
 // collects accessory data to List<Accessory> when adding to cart. Routes to CheckoutScreen.
 
 import com.pluralsight.models.accessory.Accessory;
+import com.pluralsight.models.store.Cart;
 import com.pluralsight.utilities.CatalogData;
 import java.util.List;
 import static com.pluralsight.ui.screens.HomeScreen.scanner;
-import static com.pluralsight.utilities.CatalogData.getAccessory;
 
 public class OrderScreen
 {
     public static void orderScreen()
     {
+        Cart cart = new Cart();
+
         boolean runningLoop = true;
         while (runningLoop)
         {
@@ -31,17 +33,16 @@ public class OrderScreen
             {
                 case "1": BuildScreen.start(); break;
                 case "2":
-                    Accessory selected = addAccessory();
-                    System.out.println("You selected: " + selected.getName());
-                    break;
-//                case "3": checkOutScreen();    break;
-//                case "4": cartDisplay();       break;
+                    cart.addAccessory(addAccessory());
+                    System.out.println("Accessory added to cart!"); break;
+//              case "3": CheckoutScreen.start(cart);    break;
+                case "4": cartDisplay(cart);       break;
                 case "0": runningLoop = false; break;
                 default: System.out.println("Invalid option. Please try again.");
             }
         }
-
     }
+// --------------------------------------------- addAccessory() -------------------------------------------------------
     public static Accessory addAccessory()
     {
         System.out.println("\n Accessories ");
@@ -55,6 +56,15 @@ public class OrderScreen
         int input = Integer.parseInt(scanner.nextLine().trim());
 
         return accessories.get(input - 1);
+    }
+// --------------------------------------------- cartDisplay() --------------------------------------------------------
+    public static void cartDisplay(Cart cart)
+    {
+        System.out.println("\n    Your Cart    ");
+        System.out.println("--------------------------");
+        System.out.println("Controllers: " + cart.getControllers().size());
+        System.out.println("Accessories: " + cart.getAccessories().size());
+        System.out.printf("Cart Total:  $%.2f%n", cart.getCartTotal());
     }
 }
 
