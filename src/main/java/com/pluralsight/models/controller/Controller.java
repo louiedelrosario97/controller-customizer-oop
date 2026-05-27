@@ -46,6 +46,12 @@ public class Controller
     public double getTotal()
     {
         double total = base.getPrice();
+
+        for (Cosmetic cosmetic : cosmetics) { total += cosmetic.getPrice(); }
+
+        for (Mod mod : mods)                { total += mod.getPrice(); }
+
+        return total;                      // total = base + cosmetic + mod
     }
 }
 
