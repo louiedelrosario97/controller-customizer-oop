@@ -65,7 +65,8 @@ public class CatalogData
         return colors;
     }
 
-    public static List<Accessory> getAccessory() {
+    public static List<Accessory> getAccessory()
+    {
         List<Accessory> accessories = new ArrayList<>();
         accessories.add(new Accessory("Carrying Case",    25.00));
         accessories.add(new Accessory("Controller Stand", 15.00));
