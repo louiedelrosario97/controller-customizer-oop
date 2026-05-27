@@ -21,7 +21,10 @@ public class Accessory implements IPriceable // CarryingCase, Controller stand
     @Override
     public double getPrice() { return price; }
 
-//    @Override
-//    public String toString() {}
+    @Override
+    public String toString()
+    {
+        return String.format("%s | $%.2f", name, price);
+    }
 }
 
