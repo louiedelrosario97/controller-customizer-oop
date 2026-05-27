@@ -1,6 +1,7 @@
 package com.pluralsight.utilities;
 
 import com.pluralsight.models.controller.BaseController;
+import com.pluralsight.models.cosmetics.ShellColor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,7 +11,7 @@ import java.util.List;
 // This class will hold all available options as static Lists so the UI is easier to navigate and make changes.
 public class CatalogData
 
-{
+{   // BaseController options
     public static List<BaseController> getBaseControllers()
     {
         List<BaseController> baseControllers = new ArrayList<>();
@@ -21,6 +22,21 @@ public class CatalogData
         baseControllers.add(new BaseController("New Ultimate",     50.00));
         Collections.sort(baseControllers);
         return baseControllers;
+    }
+
+    // ShellColor options
+    public static List<ShellColor> getShellColor()
+    {
+        List<String> colors = new ArrayList<>(); // IC!
+        colors.add("Matte Black");
+        colors.add("Crimson Red");
+        colors.add("Soft Pink");
+        colors.add("Wintergreen");
+        colors.add("Violet");
+        colors.add("Royal Blue");
+        colors.add("Brown");
+        colors.add("Silver");
+        colors.add("Taxi Yellow");
     }
 }
 
