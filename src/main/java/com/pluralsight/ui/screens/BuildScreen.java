@@ -2,6 +2,7 @@ package com.pluralsight.ui.screens;
 
 import com.pluralsight.models.controller.BaseController;
 import com.pluralsight.models.controller.Controller;
+import com.pluralsight.models.cosmetics.ShellColor;
 import com.pluralsight.utilities.CatalogData;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class BuildScreen
         System.out.println("\n   Design Your Controller   ");
         System.out.println("----------------------------------");
 
-        // Step 1: Base Controller
+        // Step 1: Base Controller ------------------------------------------------------------------------------------
         System.out.println("\n   Select base controller :");
 
         List<BaseController> bases = CatalogData.getBaseControllers();
@@ -33,14 +34,29 @@ public class BuildScreen
 
         Controller controller = new Controller(base);
 
-        // 2: ShellColor
+        // Step 2: ShellColor -----------------------------------------------------------------------------------------
         System.out.println("\n Would you to custom paint your controller? (+$50) (Y/N): ");
         String input = scanner.nextLine();
 
-        switch (input.toLowerCase())
+        switch (input.toUpperCase())
         {
-            case "y": List<String> colors = CatalogData.getShellColor();
-            case "n":
+            case "Y": List<String> colors = CatalogData.getShellColor();
+                System.out.println("Colors Available:");
+                for (int i = 0; i < colors.size(); i++)
+                {
+                    System.out.println((i + 1) + ") " + colors.get(i));
+                }
+                System.out.print("Select: ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+
+                controller.addCosmetic(new ShellColor(colors.get(choice - 1)));
+                break;
+            case "N":
+                System.out.println("\nNo custom paint added.");
+                break;
+            default:  System.out.println("Input not valid. Please enter Y or N.");
+                break;
         }
     }
 

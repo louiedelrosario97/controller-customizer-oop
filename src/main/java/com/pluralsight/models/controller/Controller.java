@@ -13,7 +13,7 @@ public class Controller
     private final BaseController base;
 //    private final int id;----------------------------- TODO create id logic later
 
-    // Lists (Blueprint)
+    // Lists
     private List<Cosmetic> cosmetics;
     private List<Mod> mods;
 
@@ -26,23 +26,27 @@ public class Controller
     }
 
     // Getters
-    public BaseController getBase() { return base; }
-//    public int getId() { return id; }----------------------------- TODO create id logic later
+    public BaseController getBase()  { return base; }
+//  public int getId()---------------{ return id; }----------------------------- TODO create id logic later
     public List<Cosmetic> getParts() { return cosmetics; }
-    public List<Mod> getMods() { return mods; }
+    public List<Mod> getMods()       { return mods; }
 
-    // Derived Getters
-    public double getCost()
+    // Add Methods
+    public void addCosmetic(Cosmetic cosmetic)
     {
-        double cost = 0;
-        cost += base.getPrice();
-        // Add rest of logic later ~
-        return cost;
+        cosmetics.add(cosmetic);
     }
 
-    public double getPrice()
+    public void addMod(Mod mod)
     {
-        return 0;
+        mods.add(mod);
+    }
+
+    // (Derived Getter) Gets total cost of controller once it is created after a build.
+    public double getTotal()
+    {
+        double total = base.getPrice();
     }
 }
+
 
