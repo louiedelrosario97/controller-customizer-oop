@@ -34,7 +34,7 @@ public class Cart
     public double getCartTotal() // IC!
     {
         double controllerTotal = controllers.stream()
-                .mapToDouble(Controller::getPrice)
+                .mapToDouble(Controller::getTotal)
                 .sum();
 
         double accessoryTotal = accessories.stream()
