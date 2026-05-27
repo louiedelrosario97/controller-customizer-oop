@@ -6,7 +6,6 @@ import com.pluralsight.models.cosmetics.ShellColor;
 import com.pluralsight.models.cosmetics.StickColor;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 // For every purchasable option that has 2 or more choices, we will store those choices in a List<>.
@@ -22,7 +21,6 @@ public class CatalogData
         baseControllers.add(new BaseController("Smash4 Black",     65.00));
         baseControllers.add(new BaseController("Smash4 White",    100.00));
         baseControllers.add(new BaseController("New Ultimate",     50.00));
-        Collections.sort(baseControllers);
         return baseControllers;
     }
 
