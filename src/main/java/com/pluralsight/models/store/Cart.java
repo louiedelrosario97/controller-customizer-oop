@@ -18,12 +18,15 @@ public class Cart
         this.accessories = new ArrayList<>();
     }
 
-    // Methods (Add 1 or more controller(s), accessories)
+    // Getters
+    public List<Controller> getControllers() { return controllers; }
+    public List<Accessory> getAccessories() { return accessories; }
+
+    // Add Methods (Add 1 or more controller(s), accessories)
     public void addController(Controller controller)
     {
         controllers.add(controller);
     }
-
     public void addAccessory(Accessory accessory)
     {
         accessories.add(accessory);
