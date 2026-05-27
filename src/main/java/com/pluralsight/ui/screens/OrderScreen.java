@@ -25,12 +25,12 @@ public class OrderScreen
 
             switch(input)
             {
-                case "1": BuildScreen.start();    break;
-                case "2": accessoryScreen();break;
-                case "3": checkOutScreen(); break;
-                case "4": cartDisplay();    break;
-                case "0": // Asks user to confirm they want to clear cart, if yes, clear cart list and display "Cart has been cleared"
-                default:
+                case "1": BuildScreen.start(); break;
+//                case "2": accessoryScreen();   break;
+//                case "3": checkOutScreen();    break;
+//                case "4": cartDisplay();       break;
+                case "0": runningLoop = false; break;
+                default: System.out.println("Invalid option. Please try again.");
             }
         }
     }

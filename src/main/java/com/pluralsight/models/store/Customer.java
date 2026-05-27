@@ -28,8 +28,8 @@ public class Customer {
     public String getFullName() { return firstName + " " + lastName; }
 
     // format for receipt later...
-    @Override
-    public String toString() {}
+//    @Override
+//    public String toString() {}
 }
 
 

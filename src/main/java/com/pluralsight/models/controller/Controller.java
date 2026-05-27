@@ -11,15 +11,15 @@ public class Controller
 {
     // Controller Characteristics
     private final BaseController base;
-    private final int id;
+//    private final int id;----------------------------- TODO create id logic later
 
     // Lists (Blueprint)
     private List<Cosmetic> cosmetics;
     private List<Mod> mods;
 
-    public Controller(BaseController base, int id)
+    public Controller(BaseController base)
     {
-        this.id = id;
+//        this.id = id;----------------------------- TODO create id logic later
         this.base = base;
         this.cosmetics = new ArrayList<>();
         this.mods = new ArrayList<>();
@@ -27,7 +27,7 @@ public class Controller
 
     // Getters
     public BaseController getBase() { return base; }
-    public int getId() { return id; }
+//    public int getId() { return id; }----------------------------- TODO create id logic later
     public List<Cosmetic> getParts() { return cosmetics; }
     public List<Mod> getMods() { return mods; }
 
