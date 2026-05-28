@@ -25,13 +25,15 @@ public abstract class Cosmetic implements IPriceable
 
     // Abstract Method
     @Override
-    public abstract double getPrice();
+    public abstract double getPrice(); // Logic is built in each of the child classes
+
+    @Override
+    public String getDetails() { return String.format("   %s (%s): $%.2f", name, color, getPrice()); }
 
     // Format for screens
     @Override
-    public String toString()
-    {
-        return String.format("%s | Color: %s | $%.2f", name, color, getPrice());
-    }
+    public String toString() { return String.format("%s | Color: %s | $%.2f", name, color, getPrice()); }
+
+
 }
 

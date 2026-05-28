@@ -18,6 +18,9 @@ public abstract class Mod implements IPriceable
 
     // Abstract Method
     @Override
-    public abstract double getPrice();
+    public abstract double getPrice(); // Logic is built in each of the child classes
+
+    @Override
+    public String getDetails() { return String.format("   %s: $%.2f", name, getPrice()); }
 }
 

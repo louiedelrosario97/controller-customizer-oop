@@ -1,12 +1,13 @@
 package com.pluralsight.models.controller;
 
+import com.pluralsight.interfaces.IPriceable;
 import com.pluralsight.models.modifications.Mod;
 import com.pluralsight.models.cosmetics.Cosmetic;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Controller
+public class Controller implements IPriceable
     // [Controller] Has-A BaseController, Has-A List of Parts, Has-A List of Mods, Has-A id to map to Order id
 {
     // Controller Characteristics
@@ -43,16 +44,31 @@ public class Controller
     }
 
     // (Derived Getter) Gets total cost of controller once it is created after a build.
-    public double getTotal()
+    public double getPrice()
     {
         double total = base.getPrice();
-
         for (Cosmetic cosmetic : cosmetics) { total += cosmetic.getPrice(); }
-
         for (Mod mod : mods)                { total += mod.getPrice(); }
-
         return total;                      // total = base + cosmetic + mod
     }
+
+    @Override
+    public String getDetails()
+    { // Needs to print controller base, cosmetic list, and mod list
+        String details = base.getName();
+        details += "   Base Controller (" + base.getName() + "): $" + base.getPrice();
+
+        for (Cosmetic cosmetic : cosmetics)
+        { details += "\n   " + cosmetic.getName() + " (" + cosmetic.getColor() + "): $" + cosmetic.getPrice(); }
+
+        for (Mod mod : mods)
+        { details += "\n   " + mod.getName() + ": $" + mod.getPrice(); }
+
+        details += "\n   Controller Total: $" + getPrice() + "\n";
+
+        return details;
+    }
+
 }
 
 

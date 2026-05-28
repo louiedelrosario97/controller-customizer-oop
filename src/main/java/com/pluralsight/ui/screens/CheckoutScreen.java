@@ -1,5 +1,7 @@
 package com.pluralsight.ui.screens;
 
-public class CheckoutScreen {
+public class CheckoutScreen
+{
+
 }
 

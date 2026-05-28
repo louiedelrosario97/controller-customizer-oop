@@ -31,11 +31,10 @@ public class OrderScreen
 
             switch(input)
             {
-                case "1": BuildScreen.start(); break;
-                case "2":
-                    cart.addAccessory(addAccessory());
-                    System.out.println("Accessory added to cart!"); break;
-//              case "3": CheckoutScreen.start(cart);    break;
+                case "1": cart.addController(BuildScreen.start()); break;
+                case "2": cart.addAccessory(addAccessory());
+                          System.out.println("Accessory added to cart!"); break;
+              //  case "3": CheckoutScreen.start(cart);    break;
                 case "4": cartDisplay(cart);       break;
                 case "0": runningLoop = false; break;
                 default: System.out.println("Invalid option. Please try again.");
@@ -60,11 +59,13 @@ public class OrderScreen
 // --------------------------------------------- cartDisplay() --------------------------------------------------------
     public static void cartDisplay(Cart cart)
     {
-        System.out.println("\n    Your Cart    ");
-        System.out.println("--------------------------");
-        System.out.println("Controllers: " + cart.getControllers().size());
-        System.out.println("Accessories: " + cart.getAccessories().size());
-        System.out.printf("Cart Total:  $%.2f%n", cart.getCartTotal());
+//        System.out.println("\n    Your Cart    ");
+//        System.out.println("--------------------------");
+//        System.out.println("Controllers: " + cart.getControllers().size());
+//        System.out.println("Accessories: " + cart.getAccessories().size());
+//        System.out.printf("Cart Total:  $%.2f%n", cart.getCartTotal());
+
+
     }
 }
 
