@@ -27,10 +27,7 @@ public class Order
     public Customer getCustomer() { return customer; }
     public String getOrderStatus() { return orderStatus; }
 
-
-
     // Derived Getter
-
     public double getOrderTotal()
     {
         return cart.getCartTotal();

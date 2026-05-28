@@ -34,7 +34,7 @@ public class OrderScreen
                 case "1": cart.addController(BuildScreen.start()); break;
                 case "2": cart.addAccessory(addAccessory());
                           System.out.println("Accessory added to cart!"); break;
-              //  case "3": CheckoutScreen.start(cart);    break;
+                case "3": CheckoutScreen.start(cart);    break;
                 case "4": cartDisplay(cart);       break;
                 case "0": runningLoop = false; break;
                 default: System.out.println("Invalid option. Please try again.");

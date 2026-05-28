@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 public class ReceiptWriter
 {
     public static void writeReceipt(Order order)
-    {
+    {   // IC! (PrintWriter vs BufferedWriter)
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
         String timestamp = date.format(formatter);
