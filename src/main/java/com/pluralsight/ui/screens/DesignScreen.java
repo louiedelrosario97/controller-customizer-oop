@@ -25,9 +25,7 @@ public class DesignScreen
 
     public static Controller start()
     {
-        IO.println("\n   Build Your Controller   ");
-        IO.println("------------------------------");
-
+        IO.println("\n[ BUILD YOUR CONTROLLER ]  ");
 // -------------------------------------- [ Step 1: Base Controller ] -------------------------------------------------
         IO.println("\n[ Select Base Controller ]");
 
@@ -84,7 +82,7 @@ public class DesignScreen
             {
                 case "Y":
                     List<String> colors = CatalogData.getButtonSetColor();
-                    IO.println("\n Colors Available:");
+                    IO.println("\n~~ Colors Available ~~");
                     for (int i = 0; i < colors.size(); i++)
                     {
                         IO.println((i + 1) + ") " + colors.get(i));
@@ -113,7 +111,7 @@ public class DesignScreen
             {
                 case "Y":
                     List<String> colors = CatalogData.getStickColor();
-                    IO.println("Colors Available:");
+                    IO.println("\n~~ Colors Available ~~");
                     for (int i = 0; i < colors.size(); i++)
                     {
                         IO.println((i + 1) + ") " + colors.get(i));
@@ -139,7 +137,7 @@ public class DesignScreen
             {
                 case "Y":
                     List<String> colors = CatalogData.getStickColor();
-                    IO.println("Colors Available:");
+                    IO.println("\n~~ Colors Available ~~");
                     for (int i = 0; i < colors.size(); i++) {
                         IO.println((i + 1) + ") " + colors.get(i));
                     }
@@ -165,9 +163,10 @@ public class DesignScreen
             switch (scanner.nextLine().toUpperCase())
             {
                 case "Y":
-                    IO.println("\n1) Horizontal ($50)");
-                    IO.println("2) Vertical ($50)");
-                    IO.println("3) Both ($75)");
+                    IO.println("\n[ Select Snapback Axis ]");
+                    IO.println("1) Horizontal (+$50)");
+                    IO.println("2) Vertical (+$50)");
+                    IO.println("3) Both (+$75)");
                     IO.print("Select: ");
                     switch (scanner.nextLine().trim())
                     {
@@ -194,7 +193,7 @@ public class DesignScreen
             {
                 case "Y":
                     controller.addMod(new TactileZMod());
-                    IO.println("\nTactile Z mod added!");
+                    IO.println("\nTactile Z-mod added!");
                     runningLoop = false;                                         
                     break;
 
@@ -210,10 +209,11 @@ public class DesignScreen
             IO.println("\n[ Notch Color ]");
             IO.println("Y) Apply Mod (See Options)");
             IO.println("N) None");
+            IO.print("Select: ");
             switch (scanner.nextLine().toUpperCase())
             {
                 case "Y":
-                    IO.println("1) Joystick only ($45)");
+                    IO.println("\n1) Joystick only ($45)");
                     IO.println("2) C-stick only ($45)");
                     IO.println("3) Both ($75)");
                     IO.print("Select: ");
@@ -239,13 +239,14 @@ public class DesignScreen
             IO.println("\n[ Trigger Mod ]");
             IO.println("Y) Apply Mod (See Options)");
             IO.println("N) None");
+            IO.print("Select: ");
             switch (scanner.nextLine().toUpperCase())
             {
                 case "Y":
-                    IO.println("Apply mod to which trigger?");
-                    IO.println("\n1) Left Trigger");
-                    IO.println("2) Right Trigger");
-                    IO.println("3) Both");
+                    IO.println("\n[ Apply Trigger Mod ]");
+                    IO.println("1) Left Trigger (+$10)");
+                    IO.println("2) Right Trigger (+$10)");
+                    IO.println("3) Both (+$20)");
                     IO.println("Select: ");
                     switch (scanner.nextLine().trim())
                     {

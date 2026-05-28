@@ -19,7 +19,8 @@ public class OrderScreen
         boolean runningLoop = true;
         while (runningLoop)
         {
-            IO.println("\nCommissions are made-to-order. Commission availability opens up in monthly cycles. \n          If commissions are closed, join our mailing list for updates! ");
+            IO.println("\nCommissions are made-to-order. Commission availability opens up in monthly cycles.");
+            IO.println("          If commissions are closed, join our mailing list for updates! ");
             IO.println("\n                    [ COMMISSION AVAILABILITY: OPEN ] \n");
             IO.println("1) Design Your Own");
             IO.println("2) Accessory Catalog");
@@ -32,9 +33,9 @@ public class OrderScreen
 
             switch(input)
             {
-                case "1": cart.addController(DesignScreen.start());         break;
+                case "1": cart.addController(DesignScreen.start());        break;
                 case "2": cart.addAccessory(addAccessory());
-                          IO.println("Accessory added to cart!");  break;
+                      IO.println("\nAccessory added to cart!");            break;
                 case "3": CheckoutScreen.start(cart); runningLoop = false; break;
                 case "4": cartDisplay(cart);                               break;
                 case "0": runningLoop = false;                             break;
