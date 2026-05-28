@@ -45,7 +45,7 @@ public class BuildScreen
         Controller controller = new Controller(base);
 
 // -------------------------------------- [ Step 2: Shell Color ] -----------------------------------------------------
-        System.out.print("\n Custom paint your controller? (+$50) (Y/N): ");
+        System.out.print("\nCustom paint your controller? (+$50) (Y/N): ");
 
         switch (scanner.nextLine().toUpperCase()) // IC!
         {
@@ -65,7 +65,7 @@ public class BuildScreen
             default:  System.out.println("Input not valid. Please enter Y or N."); break;
         }
 // -------------------------------------- [ Step 3: Button Set ] ------------------------------------------------------
-        System.out.print("\n Change default buttons to a custom color set? (+$15) (Y/N):");
+        System.out.print("\nChange default buttons to a custom color set? (+$15) (Y/N):");
 
         switch (scanner.nextLine().toUpperCase())
         {
@@ -86,7 +86,7 @@ public class BuildScreen
             default:  System.out.println("Input not valid. Please enter Y or N.");  break;
         }
 // -------------------------------------- [ Step 4: Joystick Color ] --------------------------------------------------
-        System.out.print("\n Would you like a custom joystick color? (+$5) (Y/N): ");
+        System.out.print("\nWould you like a custom joystick color? (+$5) (Y/N): ");
         switch (scanner.nextLine().toUpperCase())
         {
             case "Y":
@@ -106,7 +106,7 @@ public class BuildScreen
             default:  System.out.println("Input not valid. Please enter Y or N.");                    break;
         }
 // -------------------------------------- [ Step 5: C-Stick Color ] --------------------------------------------------
-        System.out.print("\n Would you like a custom C-stick color? (+$5) (Y/N): ");
+        System.out.print("\nWould you like a custom C-stick color? (+$5) (Y/N): ");
         switch (scanner.nextLine().toUpperCase())
         {
             case "Y":
@@ -124,7 +124,7 @@ public class BuildScreen
             default:  System.out.println("Input not valid. Please enter Y or N.");                   break;
         }
 // -------------------------------------- [ Step 6: Snapback Mod ] ----------------------------------------------------
-        System.out.print("\n Would you like a Snapback Mod? (Y/N): ");
+        System.out.print("\nWould you like a Snapback Mod? (Y/N): ");
         switch (scanner.nextLine().toUpperCase())
         {
             case "Y":
@@ -139,12 +139,13 @@ public class BuildScreen
                     case "2": controller.addMod(new SnapbackMod(SnapbackAxis.VERTICAL));   break;
                     case "3": controller.addMod(new SnapbackMod(SnapbackAxis.BOTH));       break;
                 }
-            case "N":
-                System.out.println("No snapback mod added."); break;
+                break;
+
+            case "N": System.out.println("\nNo snapback mod added.");              break;
             default:  System.out.println("Input not valid. Please enter Y or N."); break;
         }
 // -------------------------------------- [ Step 7: TactileZ Mod ] ----------------------------------------------------
-        System.out.print("\n Would you like a tactile Z button mod? (+$30) (Y/N): ");
+        System.out.print("\nWould you like a tactile Z button mod? (+$30) (Y/N): ");
         switch (scanner.nextLine().toUpperCase())
         {
             case "Y":
@@ -191,6 +192,7 @@ public class BuildScreen
                    case "3": controller.addMod(new TriggerMod(BumperSide.BOTH)); break;
                    default: System.out.println("Invalid selection. Trigger mod skipped."); break;
                }
+               break;
             case "N": System.out.println("No trigger mod added."); break;
             default:  System.out.println("Input not valid. Please enter Y or N."); break;
 

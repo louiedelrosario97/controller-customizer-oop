@@ -4,6 +4,7 @@ package com.pluralsight.ui.screens;
 // collects accessory data to List<Accessory> when adding to cart. Routes to CheckoutScreen.
 
 import com.pluralsight.models.accessory.Accessory;
+import com.pluralsight.models.controller.Controller;
 import com.pluralsight.models.store.Cart;
 import com.pluralsight.utilities.CatalogData;
 import java.util.List;
@@ -59,13 +60,27 @@ public class OrderScreen
 // --------------------------------------------- cartDisplay() --------------------------------------------------------
     public static void cartDisplay(Cart cart)
     {
-//        System.out.println("\n    Your Cart    ");
-//        System.out.println("--------------------------");
-//        System.out.println("Controllers: " + cart.getControllers().size());
-//        System.out.println("Accessories: " + cart.getAccessories().size());
-//        System.out.printf("Cart Total:  $%.2f%n", cart.getCartTotal());
+        // Controllers
+        System.out.println("\nControllers:");
+        for (int i = 0; i < cart.getControllers().size(); i++)
+        {
+            Controller controller = cart.getControllers().get(i);
+            System.out.println((i + 1) + ") " + controller.getDetails());
+        }
 
 
+        // Accessories
+        System.out.println("Accessories:");
+        for (int i = 0; i < cart.getAccessories().size(); i++)
+        {
+            Accessory accessory = cart.getAccessories().get(i);
+            System.out.println((i + 1) + ") " + accessory.getDetails());
+        }
+
+        // Displays cart total
+        System.out.printf("Cart Total: $%.2f%n", cart.getCartTotal());
     }
+
 }
+
 
