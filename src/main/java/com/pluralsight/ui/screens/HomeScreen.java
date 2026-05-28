@@ -14,11 +14,11 @@ public class HomeScreen
         boolean runningLoop = true;
         while (runningLoop)
         {
-            System.out.println("\n Custom GameCube Controller Shop v1.0 ");
-            System.out.println("-----------------------------------------");
-            System.out.println("1) Visit Shop");
-            System.out.println("0) Close Application");
-            System.out.print("Select: ");
+            IO.println("\n Custom GameCube Controller Shop v1.0 ");
+            IO.println("-----------------------------------------");
+            IO.println("1) Visit Shop");
+            IO.println("0) Close Application");
+            IO.print("Select: ");
 
             String input = scanner.nextLine().strip();
 
@@ -28,11 +28,11 @@ public class HomeScreen
                     orderScreen();
                     break;
                 case "0":
-                    System.out.println("\nClosing application...");
+                    IO.println("\nClosing application...");
                     runningLoop = false;
                     break;
                 default:
-                    System.out.println("Invalid option. Please try again.");
+                    IO.println("Invalid option. Please try again.");
             }
         }
     }

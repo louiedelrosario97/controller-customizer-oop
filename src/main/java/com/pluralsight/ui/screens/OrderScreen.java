@@ -19,14 +19,14 @@ public class OrderScreen
         boolean runningLoop = true;
         while (runningLoop)
         {
-            System.out.println("\nCommission are made-to-order. Commission availability opens up in monthly cycles. \n          If commissions are closed, join our mailing list for updates! ");
-            System.out.println("\n                    [ COMMISSION AVAILABILITY: OPEN ] \n");
-            System.out.println("1) Design Your Own");
-            System.out.println("2) Accessory Catalog");
-            System.out.println("3) Checkout");
-            System.out.println("4) Check Cart");
-            System.out.println("0) Cancel Order");
-            System.out.print("Select: ");
+            IO.println("\nCommission are made-to-order. Commission availability opens up in monthly cycles. \n          If commissions are closed, join our mailing list for updates! ");
+            IO.println("\n                    [ COMMISSION AVAILABILITY: OPEN ] \n");
+            IO.println("1) Design Your Own");
+            IO.println("2) Accessory Catalog");
+            IO.println("3) Checkout");
+            IO.println("4) Check Cart");
+            IO.println("0) Cancel Order");
+            IO.print("Select: ");
 
             String input = scanner.nextLine().trim();
 
@@ -34,25 +34,25 @@ public class OrderScreen
             {
                 case "1": cart.addController(BuildScreen.start());         break;
                 case "2": cart.addAccessory(addAccessory());
-                          System.out.println("Accessory added to cart!");  break;
+                          IO.println("Accessory added to cart!");  break;
                 case "3": CheckoutScreen.start(cart); runningLoop = false; break;
                 case "4": cartDisplay(cart);                               break;
                 case "0": runningLoop = false;                             break;
-                default: System.out.println("Invalid option. Please try again.");
+                default: IO.println("Invalid option. Please try again.");
             }
         }
     }
 // --------------------------------------------- addAccessory() -------------------------------------------------------
     public static Accessory addAccessory()
     {
-        System.out.println("\n Accessories ");
-        System.out.println("-------------------");
+        IO.println("\n Accessories ");
+        IO.println("-------------------");
         List<Accessory> accessories = CatalogData.getAccessory();
         for(int i = 0; i < accessories.size(); i++)
         {
-            System.out.println((i + 1) + ") " + accessories.get(i));
+            IO.println((i + 1) + ") " + accessories.get(i));
         }
-        System.out.print("Select: ");
+        IO.print("Select: ");
         int input = Integer.parseInt(scanner.nextLine().trim());
 
         return accessories.get(input - 1);
@@ -61,20 +61,20 @@ public class OrderScreen
     public static void cartDisplay(Cart cart)
     {
         // Controllers
-        System.out.println("\nControllers:");
+        IO.println("\nControllers:");
         for (int i = 0; i < cart.getControllers().size(); i++)
         {
             Controller controller = cart.getControllers().get(i);
-            System.out.println((i + 1) + ") " + controller.getDetails());
+            IO.println((i + 1) + ") " + controller.getDetails());
         }
 
 
         // Accessories
-        System.out.println("Accessories:");
+        IO.println("Accessories:");
         for (int i = 0; i < cart.getAccessories().size(); i++)
         {
             Accessory accessory = cart.getAccessories().get(i);
-            System.out.println((i + 1) + ") " + accessory.getDetails());
+            IO.println((i + 1) + ") " + accessory.getDetails());
         }
 
         // Displays cart total
