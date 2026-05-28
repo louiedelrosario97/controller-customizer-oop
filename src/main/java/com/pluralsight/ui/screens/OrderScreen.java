@@ -19,8 +19,8 @@ public class OrderScreen
         boolean runningLoop = true;
         while (runningLoop)
         {
-            System.out.println("\nCommission are made-to-order. Commission availability opens up in monthly cycles. \nIf commissions are closed, join our mailing list for updates! ");
-            System.out.println(" [ COMMISSIONS AVAILABILITY: OPEN ] ");
+            System.out.println("\nCommission are made-to-order. Commission availability opens up in monthly cycles. \n          If commissions are closed, join our mailing list for updates! ");
+            System.out.println("\n                    [ COMMISSION AVAILABILITY: OPEN ] \n");
             System.out.println("1) Design Your Own");
             System.out.println("2) Accessory Catalog");
             System.out.println("3) Checkout");
