@@ -32,7 +32,7 @@ public class HomeScreen
                     runningLoop = false;
                     break;
                 default:
-                    IO.println("Invalid option. Please try again.");
+                    IO.println("\nInvalid option. Please try again.");
             }
         }
     }

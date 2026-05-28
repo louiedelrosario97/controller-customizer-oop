@@ -38,7 +38,7 @@ public class OrderScreen
                 case "3": CheckoutScreen.start(cart); runningLoop = false; break;
                 case "4": cartDisplay(cart);                               break;
                 case "0": runningLoop = false;                             break;
-                default: IO.println("Invalid option. Please try again.");
+                default: IO.println("\nInvalid option. Please try again.");
             }
         }
     }
