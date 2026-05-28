@@ -24,14 +24,14 @@ public class ReceiptWriter
             writer.println("Date: " + timestamp);
             writer.println();
 
-            // controllers
+            // Controllers
             writer.println("Controllers:");
             for (Controller controller : order.getCart().getControllers())
             {
                 writer.println(controller.getDetails());
             }
 
-            // accessories
+            // Accessories
             writer.println("Accessories:");
             for (Accessory accessory : order.getCart().getAccessories())
             {

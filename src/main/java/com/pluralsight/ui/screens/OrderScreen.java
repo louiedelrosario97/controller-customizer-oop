@@ -19,9 +19,9 @@ public class OrderScreen
         boolean runningLoop = true;
         while (runningLoop)
         {
-            System.out.println("\n    Order Screen    ");
-            System.out.println("--------------------------");
-            System.out.println("1) Build A Controller");
+            System.out.println("\nCommission are made-to-order. Commission availability opens up in monthly cycles. \nIf commissions are closed, join our mailing list for updates! ");
+            System.out.println(" [ COMMISSIONS AVAILABILITY: OPEN ] ");
+            System.out.println("1) Design Your Own");
             System.out.println("2) Accessory Catalog");
             System.out.println("3) Checkout");
             System.out.println("4) Check Cart");
@@ -32,12 +32,12 @@ public class OrderScreen
 
             switch(input)
             {
-                case "1": cart.addController(BuildScreen.start()); break;
+                case "1": cart.addController(BuildScreen.start());         break;
                 case "2": cart.addAccessory(addAccessory());
-                          System.out.println("Accessory added to cart!"); break;
-                case "3": CheckoutScreen.start(cart);    break;
-                case "4": cartDisplay(cart);       break;
-                case "0": runningLoop = false; break;
+                          System.out.println("Accessory added to cart!");  break;
+                case "3": CheckoutScreen.start(cart); runningLoop = false; break;
+                case "4": cartDisplay(cart);                               break;
+                case "0": runningLoop = false;                             break;
                 default: System.out.println("Invalid option. Please try again.");
             }
         }
@@ -80,7 +80,6 @@ public class OrderScreen
         // Displays cart total
         System.out.printf("Cart Total: $%.2f%n", cart.getCartTotal());
     }
-
 }
 
 

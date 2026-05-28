@@ -165,15 +165,16 @@ public class BuildScreen
                 System.out.println("2) C-stick only ($45)");
                 System.out.println("3) Both ($75)");
                 System.out.print("Select: ");
-                switch (scanner.nextLine().trim()) {
+                switch (scanner.nextLine().trim())
+                {
                     case "1":  controller.addMod(new NotchMod(StickSelect.JOYSTICK)); break;
                     case "2":  controller.addMod(new NotchMod(StickSelect.C_STICK));  break;
-                    case "3":  controller.addMod(new NotchMod(StickSelect.BOTH)); break;
-                    default: System.out.println("Invalid selection. Notch mod skipped."); break;
+                    case "3":  controller.addMod(new NotchMod(StickSelect.BOTH));     break;
+                    default: System.out.println("\n Invalid input. Try again.");      break;
                 }
                 break;
-            case "N": System.out.println("No notch mod added."); break;
-            default:  System.out.println("Input not valid. Please enter Y or N."); break;
+            case "N": System.out.println("No notch mod added.");         break;
+            default:  System.out.println("\nInvalid input. Try again."); break;
         }
 // -------------------------------------- [ Step 9: Trigger Mod ] -----------------------------------------------------
         System.out.print("\n Would you like trigger mods? (Y/N): ");
@@ -187,17 +188,17 @@ public class BuildScreen
                System.out.println("Select: ");
                switch (scanner.nextLine().trim())
                {
-                   case "1": controller.addMod(new TriggerMod(BumperSide.LEFT)); break;
+                   case "1": controller.addMod(new TriggerMod(BumperSide.LEFT));  break;
                    case "2": controller.addMod(new TriggerMod(BumperSide.RIGHT)); break;
-                   case "3": controller.addMod(new TriggerMod(BumperSide.BOTH)); break;
-                   default: System.out.println("Invalid selection. Trigger mod skipped."); break;
+                   case "3": controller.addMod(new TriggerMod(BumperSide.BOTH));  break;
+                   default: System.out.println("\n Invalid input. Try again.");   break;
                }
                break;
-            case "N": System.out.println("No trigger mod added."); break;
-            default:  System.out.println("Input not valid. Please enter Y or N."); break;
+            case "N": System.out.println("No trigger mod added.");        break;
+            default:  System.out.println("\n Invalid input. Try again."); break;
 
         }
-        // Return Controller to Cart
+        // Return to start()
         return controller;
     }
 }
