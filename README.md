@@ -28,7 +28,11 @@ When you push the joystick hard in one direction and release it quickly, the sti
 ## Mod #2 - Notch Mod
 A technician files or adds custom notches to the gate at the exact angles a player needs. When the stick hits one of these custom notches, it locks into that precise angle. 
 
-**(NOTE: This is a controversial mod, as many competitive players believe this mod shows a lack of true skill expression. You have been warned.)**
+<img width="335" height="335" alt="full-notches-smash-ultimate-gamecube" src="https://github.com/user-attachments/assets/eaed6cfc-6730-40d6-b96f-ef3b897550a7" />
+
+<img width="335" height="335" alt="c-stick-notches-gamecube" src="https://github.com/user-attachments/assets/086bbb78-d70a-4647-a7ad-3cd0d7a8dfa6" />
+
+**(NOTE: This is a controversial mod, as many competitive players believe this mod shows a lack of true skill expression.)**
 
 ## Mod #3 - Trigger Mod
 A small piece of material is placed inside the trigger housing to reduce the total travel distance, so the click happens earlier in the press.
