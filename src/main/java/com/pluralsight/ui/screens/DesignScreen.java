@@ -125,7 +125,7 @@ public class DesignScreen
                         } catch (Exception e) { IO.println("\nInvalid input. Try again."); }
                     }
                     controller.addCosmetic(new ButtonSetColor(buttonColors.get(buttonSelect - 1)));
-                    IO.println("\n◆─────────────[ Paint Color: "+ buttonColors.get(buttonSelect - 1) + " ]─────────────◆" );
+                    IO.println("\n◆─────────────[ Button Color: "+ buttonColors.get(buttonSelect - 1) + " ]─────────────◆" );
                     runningLoop = false;
                     break;
 
@@ -224,40 +224,42 @@ public class DesignScreen
                     IO.println("1) Horizontal (+$50)");
                     IO.println("2) Vertical   (+$50)");
                     IO.println("3) Both       (+$75)");
-
+//                  -----------------------------------------
                     IO.print("Select: ");
-                    SnapbackAxis axisSelect = "";
+                    SnapbackAxis axisSelect = null;
                     switch (scanner.nextLine().trim())
                     {
-                        case "1": axisSelect = SnapbackAxis.HORIZONTAL; break;
-                        case "2": axisSelect = SnapbackAxis.VERTICAL;   break;
-                        case "3": axisSelect = SnapbackAxis.BOTH;       break;
+                        case "1": axisSelect = SnapbackAxis.HORIZONTAL;      break;
+                        case "2": axisSelect = SnapbackAxis.VERTICAL;        break;
+                        case "3": axisSelect = SnapbackAxis.BOTH;            break;
                         default:  IO.println("\nInvalid input. Try again."); break;
                     }
-                    if (axisSelect != "")
+                    if (axisSelect != null) // IC!
                     {
                         controller.addMod(new SnapbackMod(axisSelect));
+
+                        IO.println("\n◆─────────────[ Snapback Axis: " + axisSelect + " ]─────────────◆");
+                        runningLoop = false;
                     }
-                   // IO.println(◆─────────────[ ]─────────────◆)
-                    runningLoop = false;
                     break;
 
                 case "N": IO.println("\nNo snapback mod added."); runningLoop = false; break;
-                default:  IO.println("\nInvalid input. Try again.");       break;
+                default:  IO.println("\nInvalid input. Try again.");                   break;
             }
         }
 // -------------------------------------- [ Step 7: TactileZ Mod ] ----------------------------------------------------
-        runningLoop = true;                                                     
+        IO.println("\n[ Tactile-Z Mod ]");
+        IO.println("Y) Apply Mod (+$30)");
+        IO.println("N) None");
+        runningLoop = true;
         while (runningLoop)
         {
-            IO.println("\n[ Tactile-Z Mod ]");
-            IO.println("Y) Apply Mod (+$30)");
-            IO.println("N) None");
+            IO.print("Select: ");
             switch (scanner.nextLine().toUpperCase())
             {
                 case "Y":
                     controller.addMod(new TactileZMod());
-                    IO.println("\nTactile Z-mod added!");
+                    IO.println("\n◆─────────────[ Tactile-Z Mod: Added ]─────────────◆");
                     runningLoop = false;                                         
                     break;
 
@@ -266,65 +268,84 @@ public class DesignScreen
             }
         }
 // -------------------------------------- [ Step 8: Notch Mod ] -------------------------------------------------------
-        runningLoop = true;                                                     
+        IO.println("\n[ Notch Color ]");
+        IO.println("Y) Apply Mod (See Options)");
+        IO.println("N) None");
+        runningLoop = true;
         while (runningLoop)
         {
-            IO.println("\n[ Notch Color ]");
-            IO.println("Y) Apply Mod (See Options)");
-            IO.println("N) None");
             IO.print("Select: ");
             switch (scanner.nextLine().toUpperCase())
             {
                 case "Y":
-                    IO.println("\n1) Joystick only ($45)");
-                    IO.println("2) C-stick only ($45)");
-                    IO.println("3) Both ($75)");
+                    IO.println("\n1) Joystick only   ($45)");
+                    IO.println("2) C-stick only    ($45)");
+                    IO.println("3) Both            ($75)");
                     IO.print("Select: ");
+                    StickSelect notchSelect = null;
                     switch (scanner.nextLine().trim())
                     {
-                        case "1": controller.addMod(new NotchMod(StickSelect.JOYSTICK)); break;
-                        case "2": controller.addMod(new NotchMod(StickSelect.C_STICK));  break;
-                        case "3": controller.addMod(new NotchMod(StickSelect.BOTH));     break;
-                        default:  IO.println("\nInvalid input. Try again.");             break;
+                        case "1": notchSelect = StickSelect.JOYSTICK; break;
+                        case "2": notchSelect = StickSelect.C_STICK;  break;
+                        case "3": notchSelect = StickSelect.BOTH;     break;
+                        default:  IO.println("\nInvalid input. Try again."); break;
                     }
-                    runningLoop = false;                                         
+                    if (notchSelect != null)
+                    {
+                        controller.addMod(new NotchMod(notchSelect));
+                        IO.println("\n◆─────────────[ Notch Mod: " + notchSelect + " ]─────────────◆");
+                        runningLoop = false;
+                    }
                     break;
-
                 case "N": IO.println("\nNo notch mod added."); runningLoop = false; break;
                 default: IO.println("\nInvalid input. Try again.");                 break;
             }
         }
 // -------------------------------------- [ Step 9: Trigger Mod ] -----------------------------------------------------
-        runningLoop = true;                                                     
+
+        IO.println("\n[ Trigger Mod ]");
+        IO.println("Y) Apply Mod (See Options)");
+        IO.println("N) None");
+        runningLoop = true;
         while (runningLoop)
         {
-            //IO.print("\nWould you like trigger mods? (Y/N): ");
-            IO.println("\n[ Trigger Mod ]");
-            IO.println("Y) Apply Mod (See Options)");
-            IO.println("N) None");
             IO.print("Select: ");
             switch (scanner.nextLine().toUpperCase())
             {
                 case "Y":
                     IO.println("\n[ Apply Trigger Mod ]");
-                    IO.println("1) Left Trigger (+$10)");
+                    IO.println("1) Left Trigger  (+$10)");
                     IO.println("2) Right Trigger (+$10)");
-                    IO.println("3) Both (+$20)");
-                    IO.println("Select: ");
+                    IO.println("3) Both          (+$20)");
+                    IO.print("Select: ");
+
+                    BumperSide triggerSelect = null;
                     switch (scanner.nextLine().trim())
                     {
-                        case "1": controller.addMod(new TriggerMod(BumperSide.LEFT));  break;
-                        case "2": controller.addMod(new TriggerMod(BumperSide.RIGHT)); break;
-                        case "3": controller.addMod(new TriggerMod(BumperSide.BOTH));  break;
-                        default:  IO.println("\nInvalid input. Try again.");           break;
+                        case "1": triggerSelect = BumperSide.LEFT;           break;
+                        case "2": triggerSelect = BumperSide.RIGHT;          break;
+                        case "3": triggerSelect = BumperSide.BOTH;           break;
+                        default:  IO.println("\nInvalid input. Try again."); break;
                     }
-                    runningLoop = false;                                         
+                    if (triggerSelect != null)
+                    {
+                        controller.addMod(new TriggerMod(triggerSelect));
+                        IO.println("\n◆─────────────[ Trigger Mod: " + triggerSelect + " ]─────────────◆");
+                        runningLoop = false;
+                    }
                     break;
 
                 case "N": IO.println("No trigger mod added."); runningLoop = false; break;
                 default: IO.println("\nInvalid input. Try again.");                 break;
             }
         }
+        IO.println();
+        IO.println("      ╔═════════════════════════════════╗");
+        IO.println("      ║    Controller Added To Cart!    ║");
+        IO.println("      ╚═════════════════════════════════╝");
+        IO.println();
+        IO.println("          Redirecting back to store...     ");
+        IO.println();
         return controller; // Return to start()
     }
 }
