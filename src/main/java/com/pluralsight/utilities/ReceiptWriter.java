@@ -21,7 +21,7 @@ public class ReceiptWriter
         File receiptsFolder = new File("receipts");
         receiptsFolder.mkdirs();
 
-        try (FileOutputStream fileOutputStream = new FileOutputStream("receipts/" + order.getCustomer().getLastName() + "_" + timestamp + ".txt");
+        try (FileOutputStream fileOutputStream = new FileOutputStream("receipts/" + "_" + timestamp + ".txt");
              PrintWriter writer = new PrintWriter(fileOutputStream))
         {
             writer.println("Order Summary: ");
@@ -44,10 +44,10 @@ public class ReceiptWriter
 
 
             writer.println("----------------------------------");
-            writer.println("Order Total: $%.2f%n" + order.getOrderTotal());
+            writer.println("Order Total: " + String.format("$%.2f", order.getOrderTotal())); // .println doesn't know how to format like .printf so we use String.format() and then pass it to .println
             writer.println("=========================");
 
-            System.out.println("Receipt saved to: receipts/" + order.getCustomer().getLastName() + "_" + timestamp + ".txt");
+            System.out.println("Receipt saved to: receipts/" + "_" + timestamp + ".txt");
         }
         catch (Exception e)
         {
