@@ -199,10 +199,10 @@ public class DesignScreen
                         try
                         {
                             cStickSelect = Integer.parseInt(scanner.nextLine());
-                            cStickColors.get( cStickSelect - 1 );
+                            cStickColors.get(cStickSelect - 1);
                             cStickLoop = false;
-                        }
-                        catch (Exception e) { IO.println("\nInvalid input. Try again."); }
+                        } catch (Exception e) { IO.println("\nInvalid input. Try again."); }
+                    }
 
 
                     controller.addCosmetic(new StickColor(cStickColors.get( cStickSelect - 1), StickSelect.C_STICK));
