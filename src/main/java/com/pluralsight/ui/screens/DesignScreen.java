@@ -175,29 +175,43 @@ public class DesignScreen
             }
         }
 // -------------------------------------- [ Step 5: C-Stick Color ] --------------------------------------------------
-        runningLoop = true;                                                     
+        IO.println("\n[ C-stick Color ]");
+        IO.println("Y) Customize C-stick (+$5)");
+        IO.println("N) Default C-stick");
+        runningLoop = true;
         while (runningLoop)
         {
-            IO.println("\n[ C-stick Color ]");
-            IO.println("Y) Customize C-stick (+$5)");
-            IO.println("N) Default C-stick");
             switch (scanner.nextLine().toUpperCase())
             {
                 case "Y":
-                    List<String> colors = CatalogData.getStickColor();
-                    IO.println("\n~~ Colors Available ~~");
-                    for (int i = 0; i < colors.size(); i++) {
-                        IO.println((i + 1) + ") " + colors.get(i));
+                    List<String> cStickColors = CatalogData.getStickColor();
+                    IO.println("\n[ Colors Available ]");
+                    for (int i = 0; i < cStickColors.size(); i++)
+                    {
+                        IO.println((i + 1) + ") " + cStickColors.get(i));
                     }
-                    IO.print("Select: ");
 
-                    controller.addCosmetic(new StickColor(colors.get(choice - 1), StickSelect.C_STICK));
-                  //  IO.println("\n◆─────────────[ C-Stick Color: "+ cStickColors.get(cStickSelect - 1) + " ]─────────────◆" );
+                    int cStickSelect = 0;
+                    boolean cStickLoop = true;
+                    while(cStickLoop)
+                    {
+                        IO.print("Select: ");
+                        try
+                        {
+                            cStickSelect = Integer.parseInt(scanner.nextLine());
+                            cStickColors.get( cStickSelect - 1 );
+                            cStickLoop = false;
+                        }
+                        catch (Exception e) { IO.println("\nInvalid input. Try again."); }
+
+
+                    controller.addCosmetic(new StickColor(cStickColors.get( cStickSelect - 1), StickSelect.C_STICK));
+                    IO.println("\n◆─────────────[ C-Stick Color: "+ cStickColors.get(cStickSelect - 1) + " ]─────────────◆" );
                     runningLoop = false;                                         
                     break;
 
                 case "N": IO.println("\nNo custom C-stick color added."); runningLoop = false; break;
-                default: IO.println("\nInput not valid. Please enter Y or N.");                break;
+                default: IO.println("\nInvalid input. Try again.");                break;
             }
         }
 // -------------------------------------- [ Step 6: Snapback Mod ] ----------------------------------------------------
