@@ -268,7 +268,7 @@ public class DesignScreen
             }
         }
 // -------------------------------------- [ Step 8: Notch Mod ] -------------------------------------------------------
-        IO.println("\n[ Notch Color ]");
+        IO.println("\n[ Notch Mod ]");
         IO.println("Y) Apply Mod (See Options)");
         IO.println("N) None");
         runningLoop = true;

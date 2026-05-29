@@ -3,3 +3,18 @@
  In this console application, users are able to design and order their own custom-made GameCube controllers. When designing a controller, users choose their base controller, cosmetic customizations, and hardware modifications. Each add-on cosmetic/modification will increase the cost of the build depending on which add-on is applied. At the end of the design screen, the data of the users build will automatically be added to their cart and will return to the store page. Additionally, users can access the "Accessories" menu if they wish to purchase a carry case and/or a controller stand. 
  
 From the store's order screen, users can also view their cart. It will display any controllers and accessories in separate itemized lists. When checking out, users are displayed their itemized order summary, and prompted to confirm their order where they can choose to place or cancel an order.
+
+## Why Customize A GameCube Controller?
+For 20+ years since its release, the GameCube controller layout remains the preferred controller for competitive Super Smash Bros. Melee and Ultimate players. Due to the competitiveness of Super Smash Bros' gaming community, a whole modding industry has grown with different specialized modifications in custom shells, upgraded internals, noise elimination, and precision improvements. This application simulates that custom shop experience.
+
+## Parts of a GameCube Controller - Base Model
+| Model | Price | What it is                                                                                                                         |
+|---|---|------------------------------------------------------------------------------------------------------------------------------------|
+| **Indigo** | $45 | The original 2001 launch model in classic indigo purple. Most common, decent internals, good starting point for a budget build     |
+| **Smash4 Black** | $65 | Produced in 2014 for *Super Smash Bros. for Wii U*. Often praised for having a tighter, snappier joystick box                      |
+| **Smash4 White** | $100 | The rarer white colorway of the 2014 run. Same internals as Smash4 Black but harder to find — collector appeal drives the price up |
+| **New Ultimate** | $50 | Produced in 2018 for *Super Smash Bros. Ultimate*. Similar to the Indigo in quality; a solid mid-range starting point              |
+
+## Parts of a GameCube Controller - Base Model
+
+

@@ -14,9 +14,10 @@
 
 ---------------------------------------- ! Bonus ideas ! ---------------------------------------
     - Fully designed screens (colors, UI formatting etc.)
+    - In modifications, when user selects a mod, an explination of the modification is presented
+      before choosing to add mod
+    - Asks user to confirm they want to clear cart, if yes, clear cart list and display "Cart has been cleared"
 ------------------------------------------------------------------------------------------------
-
-
 
 
 
@@ -45,8 +46,11 @@
 // ---------------------------------- Part --------------------------------------
 // TODO: Create toString() for receipt formatting
 
-// ---------------------------------- --------------------------------------
-// ---------------------------------- --------------------------------------
-// ---------------------------------- --------------------------------------
-// ---------------------------------- --------------------------------------
-// ---------------------------------- --------------------------------------
+
+============================== store =========================================
+
+// ---------------------------------- Order --------------------------------------
+// TODO: UX, prompt for quantity when purchasing accessory
+// TODO: UX, prompt for adding another build after building a Controller
+
+
