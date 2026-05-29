@@ -12,7 +12,6 @@ public class Controller implements IPriceable
 {
     // Controller Characteristics
     private final BaseController base;
-//    private final int id;----------------------------- TODO create id logic later
 
     // Lists
     private List<Cosmetic> cosmetics;
@@ -20,7 +19,6 @@ public class Controller implements IPriceable
 
     public Controller(BaseController base)
     {
-//        this.id = id;----------------------------- TODO create id logic later
         this.base = base;
         this.cosmetics = new ArrayList<>();
         this.mods = new ArrayList<>();
@@ -28,7 +26,6 @@ public class Controller implements IPriceable
 
     // Getters
     public BaseController getBase()  { return base; }
-//  public int getId()---------------{ return id; }----------------------------- TODO create id logic later
     public List<Cosmetic> getParts() { return cosmetics; }
     public List<Mod> getMods()       { return mods; }
 

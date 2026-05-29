@@ -6,26 +6,22 @@ import java.util.List;
 
 public class Order
 {
-    // private final int orderId;
     private final Cart cart;
-    private final Customer customer;
-    private String orderStatus;
+ //   private final Customer customer;
+ //   private String orderStatus;
 
 
     // Constructor
-    public Order(Cart cart, Customer customer, String orderStatus)
+    public Order(Cart cart)
     {
-      //  this.orderId = orderId;
         this.cart = cart;
-        this.customer = customer;
-        this.orderStatus = orderStatus;
+    //    this.customer = customer;
+    //    this.orderStatus = orderStatus;
     }
 
     // Getters
-    // public int getOrderId() { return orderId; }
     public Cart getCart() { return cart; }
-    public Customer getCustomer() { return customer; }
-    public String getOrderStatus() { return orderStatus; }
+  //  public Customer getCustomer() { return customer; }
 
     // Derived Getter
     public double getOrderTotal()

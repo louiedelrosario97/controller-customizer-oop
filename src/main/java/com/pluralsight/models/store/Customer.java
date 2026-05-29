@@ -27,9 +27,7 @@ public class Customer {
     // Derived Getter - ( Will use to retrieve full name when needed )
     public String getFullName() { return firstName + " " + lastName; }
 
-    // format for receipt later...
-//    @Override
-//    public String toString() {}
+
 }
 
 
