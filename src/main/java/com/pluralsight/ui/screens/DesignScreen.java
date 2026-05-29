@@ -73,21 +73,21 @@ public class DesignScreen
                         IO.println((i + 1) + ") " + controllerColors.get(i));
                     }
 
-                    int paintSelect = 0;
+                    int controllerSelect = 0;
                     boolean colorLoop = true;
                     while(colorLoop)
                     {
                         IO.print("Select: ");
                         try
                         {
-                            paintSelect = Integer.parseInt(scanner.nextLine()); // Filters out noninteger inputs.
-                            controllerColors.get(paintSelect - 1);              // Filters out integers that don't exist in the List.
+                            controllerSelect = Integer.parseInt(scanner.nextLine()); // Filters out noninteger inputs.
+                            controllerColors.get(controllerSelect - 1);              // Filters out integers that don't exist in the List.
                             colorLoop = false;                                  // Passing these filters ends the loop!
                         }
                         catch (Exception e) { IO.println("\nInvalid input. Try again."); }
                     }
-                    controller.addCosmetic(new ShellColor(controllerColors.get(paintSelect - 1)));
-                    IO.println("\n◆─────────────[ Paint Color: "+ controllerColors.get(paintSelect - 1) + " ]─────────────◆" );
+                    controller.addCosmetic(new ShellColor(controllerColors.get(controllerSelect - 1)));
+                    IO.println("\n◆─────────────[ Paint Color: "+ controllerColors.get(controllerSelect - 1) + " ]─────────────◆" );
                     runningLoop = false;
                     break;
 
@@ -113,17 +113,21 @@ public class DesignScreen
                         IO.println((i + 1) + ") " + buttonColors.get(i));
                     }
 
-                    int colorSelection = 0;
+                    int buttonSelect = 0;
                     boolean colorLoop = true;
                     while(colorLoop)
                     {
                         IO.print("Select: ");
                         try
                         {
-
+                            buttonSelect = Integer.parseInt(scanner.nextLine());
+                            buttonColors.get(buttonSelect - 1 );
+                            colorLoop = false;
                         }
+                        catch (Exception e) { IO.println("\nInvalid input. Try again."); }
                     }
-                    controller.addCosmetic(new ButtonSetColor(buttonColors.get(choice - 1)));
+                    controller.addCosmetic(new ButtonSetColor(buttonColors.get(buttonSelect - 1)));
+                    IO.println("\n◆─────────────[ Paint Color: "+ buttonColors.get(buttonSelect - 1) + " ]─────────────◆" );
                     runningLoop = false;
                     break;
 
@@ -132,31 +136,42 @@ public class DesignScreen
             }
         }
 // -------------------------------------- [ Step 4: Joystick Color ] --------------------------------------------------
+        IO.println("\n[ Joystick Color ]");
+        IO.println("Y) Customize Joystick (+$5)");
+        IO.println("N) Default Joystick");
         runningLoop = true;
         while (runningLoop)
         {
-            // IO.print("\nWould you like a custom joystick color? (+$5) (Y/N): ");
-            IO.println("\n[ Joystick Color ]");
-            IO.println("Y) Customize Joystick (+$5)");
-            IO.println("N) Default Joystick");
             IO.print("Select: ");
             switch (scanner.nextLine().toUpperCase())
             {
                 case "Y":
-                    List<String> colors = CatalogData.getStickColor();
-                    IO.println("\n~~ Colors Available ~~");
-                    for (int i = 0; i < colors.size(); i++)
+                    List<String> joyColors = CatalogData.getStickColor();
+                    IO.println("\n[ Colors Available ]");
+                    for (int i = 0; i < joyColors.size(); i++)
                     {
-                        IO.println((i + 1) + ") " + colors.get(i));
+                        IO.println((i + 1) + ") " + joyColors.get(i));
                     }
-                    IO.print("Select: ");
-                    int choice = scanner.nextInt();
-                    scanner.nextLine();
-                    controller.addCosmetic(new StickColor(colors.get(choice - 1), StickSelect.JOYSTICK));
+
+                    int joySelect = 0;
+                    boolean joyLoop = true;
+                    while(joyLoop)
+                    {
+                        IO.print("Select: ");
+                        try
+                        {
+                            joySelect = Integer.parseInt(scanner.nextLine());
+                            joyColors.get(joySelect - 1 );
+                            joyLoop = false;
+                        }
+                        catch (Exception e) { IO.println("\nInvalid input. Try again."); }
+                    }
+                    controller.addCosmetic(new StickColor(joyColors.get(joySelect - 1), StickSelect.JOYSTICK));
+                    IO.println("\n◆─────────────[ Joystick Color: "+ joyColors.get(joySelect - 1) + " ]─────────────◆" );
                     runningLoop = false;
                     break;
                 case "N": IO.println("\nNo custom joystick color added."); runningLoop = false; break;
-                default: IO.println("\nInput not valid. Please enter Y or N.");                 break;
+                default: IO.println("\nInvalid input. Try again.");                 break;
             }
         }
 // -------------------------------------- [ Step 5: C-Stick Color ] --------------------------------------------------
@@ -175,9 +190,9 @@ public class DesignScreen
                         IO.println((i + 1) + ") " + colors.get(i));
                     }
                     IO.print("Select: ");
-                    int choice = scanner.nextInt();
-                    scanner.nextLine();
+
                     controller.addCosmetic(new StickColor(colors.get(choice - 1), StickSelect.C_STICK));
+                  //  IO.println("\n◆─────────────[ C-Stick Color: "+ cStickColors.get(cStickSelect - 1) + " ]─────────────◆" );
                     runningLoop = false;                                         
                     break;
 
