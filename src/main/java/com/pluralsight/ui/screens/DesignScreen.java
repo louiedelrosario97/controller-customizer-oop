@@ -67,27 +67,27 @@ public class DesignScreen
             {
                 case "Y":
                     List<String> controllerColors = CatalogData.getShellColor();
-                    IO.println("\nColors Available:");
+                    IO.println("\n[ Colors Available: ]");
                     for (int i = 0; i < controllerColors.size(); i++)
                     {
                         IO.println((i + 1) + ") " + controllerColors.get(i));
                     }
 
-                    int colorSelection = 0;
+                    int paintSelect = 0;
                     boolean colorLoop = true;
                     while(colorLoop)
                     {
                         IO.print("Select: ");
                         try
                         {
-                            colorSelection = Integer.parseInt(scanner.nextLine());
-                            controllerColors.get(colorSelection - 1);
-                            colorLoop = false;
+                            paintSelect = Integer.parseInt(scanner.nextLine()); // Filters out noninteger inputs.
+                            controllerColors.get(paintSelect - 1);              // Filters out integers that don't exist in the List.
+                            colorLoop = false;                                  // Passing these filters ends the loop!
                         }
                         catch (Exception e) { IO.println("\nInvalid input. Try again."); }
                     }
-                    controller.addCosmetic(new ShellColor(controllerColors.get(colorSelection - 1)));
-                    IO.println("◆─────────────[ Paint Color: "+ controllerColors.get(colorSelection - 1) + " ]─────────────◆" );
+                    controller.addCosmetic(new ShellColor(controllerColors.get(paintSelect - 1)));
+                    IO.println("\n◆─────────────[ Paint Color: "+ controllerColors.get(paintSelect - 1) + " ]─────────────◆" );
                     runningLoop = false;
                     break;
 
@@ -106,22 +106,29 @@ public class DesignScreen
             switch (scanner.nextLine().toUpperCase())
             {
                 case "Y":
-                    List<String> colors = CatalogData.getButtonSetColor();
-                    IO.println("\n~~ Colors Available ~~");
-                    for (int i = 0; i < colors.size(); i++)
+                    List<String> buttonColors = CatalogData.getButtonSetColor();
+                    IO.println("\n[ Colors Available ]");
+                    for (int i = 0; i < buttonColors.size(); i++)
                     {
-                        IO.println((i + 1) + ") " + colors.get(i));
+                        IO.println((i + 1) + ") " + buttonColors.get(i));
                     }
 
-                    IO.print("Select: ");
-                    int choice = scanner.nextInt();
-                    scanner.nextLine();
-                    controller.addCosmetic(new ButtonSetColor(colors.get(choice - 1)));
+                    int colorSelection = 0;
+                    boolean colorLoop = true;
+                    while(colorLoop)
+                    {
+                        IO.print("Select: ");
+                        try
+                        {
+
+                        }
+                    }
+                    controller.addCosmetic(new ButtonSetColor(buttonColors.get(choice - 1)));
                     runningLoop = false;
                     break;
 
                 case "N":  IO.println("\nNo custom button set added."); runningLoop = false; break;
-                default:  IO.println("\nInput not valid. Please enter Y or N.");             break;
+                default:  IO.println("\nInvalid input. Try again.");             break;
             }
         }
 // -------------------------------------- [ Step 4: Joystick Color ] --------------------------------------------------
