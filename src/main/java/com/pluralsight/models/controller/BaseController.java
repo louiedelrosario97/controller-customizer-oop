@@ -24,7 +24,7 @@ public class BaseController implements IPriceable
     @Override
     public String toString()
     {
-        return String.format("%s | $%.2f", name, price);
+        return String.format("%-15s | $%.2f", name, price); // LM!
     }
 
     @Override

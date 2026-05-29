@@ -68,7 +68,8 @@ public class Controller implements IPriceable
 
         return details;
     }
-
+    @Override
+    public String toString() { return "\nBase Controller: " + base.getName(); }
 }
 
 

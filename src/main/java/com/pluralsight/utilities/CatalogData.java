@@ -17,7 +17,7 @@ public class CatalogData
     {
         List<BaseController> baseControllers = new ArrayList<>();
 
-        baseControllers.add(new BaseController("Indigo (Original)",45.00));
+        baseControllers.add(new BaseController("Indigo", 45.00));
         baseControllers.add(new BaseController("Smash4 Black",     65.00));
         baseControllers.add(new BaseController("Smash4 White",    100.00));
         baseControllers.add(new BaseController("New Ultimate",     50.00));

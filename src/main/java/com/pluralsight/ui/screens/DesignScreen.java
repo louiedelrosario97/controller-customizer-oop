@@ -38,9 +38,11 @@ public class DesignScreen
         int baseSelection = scanner.nextInt();
         scanner.nextLine();
 
-        BaseController base = bases.get(baseSelection - 1);
+        BaseController base = bases.get(baseSelection - 1); // -1 to retrieve the correct index position (Selection 1 is index 0, Selection 2 is index 1 etc...)
 
         Controller controller = new Controller(base);
+
+        IO.println(controller);
 
 // -------------------------------------- [ Step 2: Shell Color ] -----------------------------------------------------
         boolean runningLoop = true;
@@ -63,11 +65,12 @@ public class DesignScreen
                     scanner.nextLine();
 
                     controller.addCosmetic(new ShellColor(colors.get(choice - 1)));
+                    IO.println("Paint Color: "+ colors.get(choice-1));
                     runningLoop = false;
                     break;
 
                 case "N": IO.println("\nNo custom paint added."); runningLoop = false; break;
-                default:  IO.println("\nInput not valid. Please enter Y or N.");       break;
+                default:  IO.print("\nInput not valid. Please enter Y or N.\n");       break;
             }
         }
 // -------------------------------------- [ Step 3: Button Set ] ------------------------------------------------------
