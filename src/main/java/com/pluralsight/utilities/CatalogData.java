@@ -28,14 +28,10 @@ public class CatalogData
     public static List<String> getShellColor()
     {
         List<String> colors = new ArrayList<>(); // IC!
-        colors.add("Matte Black");
         colors.add("Crimson Red");
         colors.add("Soft Pink");
         colors.add("Wintergreen");
-        colors.add("Violet");
         colors.add("Royal Blue");
-        colors.add("Brown");
-        colors.add("Silver");
         colors.add("Taxi Yellow");
         return colors;
     }
@@ -55,11 +51,8 @@ public class CatalogData
         List<String> colors = new ArrayList<>();
         colors.add("White");
         colors.add("Black");
-        colors.add("Iridescent");
-        colors.add("Solid Green");
         colors.add("Solid Red");
         colors.add("Solid Purple");
-        colors.add("Transparent Green");
         colors.add("Transparent Red");
         colors.add("Transparent Purple");
         return colors;

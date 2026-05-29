@@ -34,38 +34,64 @@ public class DesignScreen
         {
             IO.println((i + 1) + ") " + bases.get(i));
         }
-        IO.print("Select: ");
-        int baseSelection = scanner.nextInt();
-        scanner.nextLine();
 
-        BaseController base = bases.get(baseSelection - 1); // -1 to retrieve the correct index position (Selection 1 is index 0, Selection 2 is index 1 etc...)
+        int baseSelection = 0;
+        boolean runningLoop = true;
+        while (runningLoop) // IC!
+        {
+            IO.print("Select: ");
+            try
+            {   // Says, go get the index value in this List (bases), and if the value can't find it, throw an exception.
+                baseSelection = Integer.parseInt(scanner.nextLine());
+                BaseController base = bases.get(baseSelection - 1);
+                runningLoop = false;
+            }
+            catch (Exception e) { IO.println("\nInvalid input. Try again."); }
+        }       // -1 to retrieve the correct index position (Selection 1 is index 0, Selection 2 is index 1 etc...)
+        BaseController base = bases.get(baseSelection - 1);
 
         Controller controller = new Controller(base);
 
         IO.println(controller);
 
 // -------------------------------------- [ Step 2: Shell Color ] -----------------------------------------------------
-        boolean runningLoop = true;
+        // Moved the .println's above the while-loop so it doesnt "reprint" when an exception is thrown.
+        IO.println("\n[ Paint Your Controller ]");
+        IO.println("Y) Customize Paint (+$50)");
+        IO.println("N) No Paint");
+        runningLoop = true;
         while(runningLoop)
         {
-            IO.println("\n[ Paint Your Controller ]");
-            IO.println("Y) Customize Paint (+$50)");
-            IO.println("N) No Paint");
             IO.print("Select: ");
             switch (scanner.nextLine().toUpperCase()) // IC!
             {
                 case "Y":
-                    List<String> colors = CatalogData.getShellColor();
+                    List<String> controllerColors = CatalogData.getShellColor();
                     IO.println("\nColors Available:");
-                    for (int i = 0; i < colors.size(); i++) {
-                        IO.println((i + 1) + ") " + colors.get(i));
+                    for (int i = 0; i < controllerColors.size(); i++)
+                    {
+                        IO.println((i + 1) + ") " + controllerColors.get(i));
                     }
-                    IO.print("Select: ");
-                    int choice = scanner.nextInt();
-                    scanner.nextLine();
 
-                    controller.addCosmetic(new ShellColor(colors.get(choice - 1)));
-                    IO.println("Paint Color: "+ colors.get(choice-1));
+                    int colorSelection = 0;
+                    boolean colorLoop = true;
+                    while(colorLoop)
+                    {
+                        IO.print("Select: ");
+                        try
+                        {
+                            colorSelection = Integer.parseInt(scanner.nextLine());
+                            controllerColors.get(colorSelection - 1);
+                            colorLoop = false;
+                        }
+                        catch (Exception e) { IO.println("\nInvalid input. Try again."); }
+
+                        int choice = scanner.nextInt();
+                        scanner.nextLine();
+                    }
+
+                    controller.addCosmetic(new ShellColor(controllerColors.get(colorSelection - 1)));
+                    IO.println("Paint Color: "+ controllerColors.get(colorSelection -1 ));
                     runningLoop = false;
                     break;
 
@@ -90,6 +116,7 @@ public class DesignScreen
                     {
                         IO.println((i + 1) + ") " + colors.get(i));
                     }
+
                     IO.print("Select: ");
                     int choice = scanner.nextInt();
                     scanner.nextLine();
