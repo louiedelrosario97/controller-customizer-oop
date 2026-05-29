@@ -85,13 +85,9 @@ public class DesignScreen
                             colorLoop = false;
                         }
                         catch (Exception e) { IO.println("\nInvalid input. Try again."); }
-
-                        int choice = scanner.nextInt();
-                        scanner.nextLine();
                     }
-
                     controller.addCosmetic(new ShellColor(controllerColors.get(colorSelection - 1)));
-                    IO.println("Paint Color: "+ controllerColors.get(colorSelection -1 ));
+                    IO.println("◆─────────────[ Paint Color: "+ controllerColors.get(colorSelection - 1) + " ]─────────────◆" );
                     runningLoop = false;
                     break;
 
@@ -100,12 +96,12 @@ public class DesignScreen
             }
         }
 // -------------------------------------- [ Step 3: Button Set ] ------------------------------------------------------
+        IO.println("\n[ Button Color Sets ]");
+        IO.println("Y) Customize Buttons (+$15)");
+        IO.println("N) Default Buttons");
         runningLoop = true;
         while (runningLoop)
         {
-            IO.println("\n[ Button Color Sets ]");
-            IO.println("Y) Customize Buttons (+$15)");
-            IO.println("N) Default Buttons");
             IO.print("Select: ");
             switch (scanner.nextLine().toUpperCase())
             {

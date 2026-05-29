@@ -11,13 +11,13 @@ public class HomeScreen
 
     public static void homeScreen()
     {
+        IO.println("\n Custom GameCube Controller Shop v1.0 ");
+        IO.println("-----------------------------------------");
+        IO.println("1) Visit Shop");
+        IO.println("0) Close Application");
         boolean runningLoop = true;
         while (runningLoop)
         {
-            IO.println("\n Custom GameCube Controller Shop v1.0 ");
-            IO.println("-----------------------------------------");
-            IO.println("1) Visit Shop");
-            IO.println("0) Close Application");
             IO.print("Select: ");
 
             String input = scanner.nextLine().strip();
