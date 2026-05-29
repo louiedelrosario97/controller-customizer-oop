@@ -16,6 +16,10 @@ For 20+ years since its release, the GameCube controller layout remains the pref
 
 ## Step 2 — Cosmetic Customizations
 Users can customize the cosmetics of their controller to personalize their build. The parts that are available for cosmetic design are the controllers outer shell, both analog sticks (Joy Stick/C-Stick), and the buttons which come in a set. 
+### Cosmetic Examples
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/aac87acb-a915-436b-835f-69b49003348d" />  <img width="410" alt="Screenshot 2026-05-29 081354" src="https://github.com/user-attachments/assets/ef382e59-a650-4118-a309-84d3b9ee0a4a" />
+
+
 
 ## What part does each mod apply to? - LucidChart
 
