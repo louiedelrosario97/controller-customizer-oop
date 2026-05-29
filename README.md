@@ -8,3 +8,6 @@ For 20+ years since its release, the GameCube controller layout remains the pref
 | **Smash4 Black** | $65 | Produced in 2014 for *Super Smash Bros. for Wii U*. Often praised for having a tighter, snappier joystick box                      |
 | **Smash4 White** | $100 | The rarer white colorway of the 2014 run. Same internals as Smash4 Black but harder to find — collector appeal drives the price up |
 | **New Ultimate** | $50 | Produced in 2018 for *Super Smash Bros. Ultimate*. Similar to the Indigo in quality; a solid mid-range starting point              |
+
+
+<img width="600" alt="GameCube Controller Mod to Part" src="https://github.com/user-attachments/assets/c0b9b2ba-0c58-4c80-b2a3-0cfe3e9a56ac" />
