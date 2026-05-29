@@ -83,8 +83,7 @@ public class DesignScreen
                             controllerSelect = Integer.parseInt(scanner.nextLine()); // Filters out noninteger inputs.
                             controllerColors.get(controllerSelect - 1);              // Filters out integers that don't exist in the List.
                             colorLoop = false;                                  // Passing these filters ends the loop!
-                        }
-                        catch (Exception e) { IO.println("\nInvalid input. Try again."); }
+                        } catch (Exception e) { IO.println("\nInvalid input. Try again."); }
                     }
                     controller.addCosmetic(new ShellColor(controllerColors.get(controllerSelect - 1)));
                     IO.println("\n◆─────────────[ Paint Color: "+ controllerColors.get(controllerSelect - 1) + " ]─────────────◆" );
@@ -92,7 +91,7 @@ public class DesignScreen
                     break;
 
                 case "N": IO.println("\nNo custom paint added."); runningLoop = false; break;
-                default:  IO.print("\nInput not valid. Please enter Y or N.\n");       break;
+                default:  IO.print("\nInvalid input. Try again.\n");       break;
             }
         }
 // -------------------------------------- [ Step 3: Button Set ] ------------------------------------------------------
@@ -123,8 +122,7 @@ public class DesignScreen
                             buttonSelect = Integer.parseInt(scanner.nextLine());
                             buttonColors.get(buttonSelect - 1 );
                             colorLoop = false;
-                        }
-                        catch (Exception e) { IO.println("\nInvalid input. Try again."); }
+                        } catch (Exception e) { IO.println("\nInvalid input. Try again."); }
                     }
                     controller.addCosmetic(new ButtonSetColor(buttonColors.get(buttonSelect - 1)));
                     IO.println("\n◆─────────────[ Paint Color: "+ buttonColors.get(buttonSelect - 1) + " ]─────────────◆" );
@@ -163,24 +161,24 @@ public class DesignScreen
                             joySelect = Integer.parseInt(scanner.nextLine());
                             joyColors.get(joySelect - 1 );
                             joyLoop = false;
-                        }
-                        catch (Exception e) { IO.println("\nInvalid input. Try again."); }
+                        } catch (Exception e) { IO.println("\nInvalid input. Try again."); }
                     }
                     controller.addCosmetic(new StickColor(joyColors.get(joySelect - 1), StickSelect.JOYSTICK));
                     IO.println("\n◆─────────────[ Joystick Color: "+ joyColors.get(joySelect - 1) + " ]─────────────◆" );
                     runningLoop = false;
                     break;
                 case "N": IO.println("\nNo custom joystick color added."); runningLoop = false; break;
-                default: IO.println("\nInvalid input. Try again.");                 break;
+                default: IO.println("\nInvalid input. Try again.");                             break;
             }
         }
 // -------------------------------------- [ Step 5: C-Stick Color ] --------------------------------------------------
-        IO.println("\n[ C-stick Color ]");
-        IO.println("Y) Customize C-stick (+$5)");
-        IO.println("N) Default C-stick");
+        IO.println("\n[ C-Stick Color ]");
+        IO.println("Y) Customize C-Stick (+$5)");
+        IO.println("N) Default C-Stick");
         runningLoop = true;
         while (runningLoop)
         {
+            IO.print("Select: ");
             switch (scanner.nextLine().toUpperCase())
             {
                 case "Y":
@@ -203,51 +201,55 @@ public class DesignScreen
                             cStickLoop = false;
                         } catch (Exception e) { IO.println("\nInvalid input. Try again."); }
                     }
-
-
                     controller.addCosmetic(new StickColor(cStickColors.get( cStickSelect - 1), StickSelect.C_STICK));
                     IO.println("\n◆─────────────[ C-Stick Color: "+ cStickColors.get(cStickSelect - 1) + " ]─────────────◆" );
-                    runningLoop = false;                                         
-                    break;
+                    runningLoop = false; break;
 
-                case "N": IO.println("\nNo custom C-stick color added."); runningLoop = false; break;
-                default: IO.println("\nInvalid input. Try again.");                break;
+                case "N": IO.println("\nNo custom C-Stick color added."); runningLoop = false; break;
+                default: IO.println("\nInvalid input. Try again.");                            break;
             }
         }
 // -------------------------------------- [ Step 6: Snapback Mod ] ----------------------------------------------------
-        runningLoop = true;                                                     
+        IO.println("\n[ Snapback Mod ]");
+        IO.println("Y) Apply Mod (See Options)");
+        IO.println("N) None");
+        runningLoop = true;
         while (runningLoop)
         {
-            //IO.print("\nWould you like a Snapback Mod? (Y/N): ");
-            IO.println("\n[ Snapback Mod ]");
-            IO.println("Y) Apply Mod (See Options)");
-            IO.println("N) None");
+            IO.print("Select: ");
             switch (scanner.nextLine().toUpperCase())
             {
                 case "Y":
                     IO.println("\n[ Select Snapback Axis ]");
                     IO.println("1) Horizontal (+$50)");
-                    IO.println("2) Vertical (+$50)");
-                    IO.println("3) Both (+$75)");
+                    IO.println("2) Vertical   (+$50)");
+                    IO.println("3) Both       (+$75)");
+
                     IO.print("Select: ");
+                    SnapbackAxis axisSelect = "";
                     switch (scanner.nextLine().trim())
                     {
-                        case "1": controller.addMod(new SnapbackMod(SnapbackAxis.HORIZONTAL)); break;
-                        case "2": controller.addMod(new SnapbackMod(SnapbackAxis.VERTICAL));   break;
-                        case "3": controller.addMod(new SnapbackMod(SnapbackAxis.BOTH));       break;
+                        case "1": axisSelect = SnapbackAxis.HORIZONTAL; break;
+                        case "2": axisSelect = SnapbackAxis.VERTICAL;   break;
+                        case "3": axisSelect = SnapbackAxis.BOTH;       break;
+                        default:  IO.println("\nInvalid input. Try again."); break;
                     }
+                    if (axisSelect != "")
+                    {
+                        controller.addMod(new SnapbackMod(axisSelect));
+                    }
+                   // IO.println(◆─────────────[ ]─────────────◆)
                     runningLoop = false;
                     break;
 
                 case "N": IO.println("\nNo snapback mod added."); runningLoop = false; break;
-                default:  IO.println("\nInput not valid. Please enter Y or N.");       break;
+                default:  IO.println("\nInvalid input. Try again.");       break;
             }
         }
 // -------------------------------------- [ Step 7: TactileZ Mod ] ----------------------------------------------------
         runningLoop = true;                                                     
         while (runningLoop)
         {
-            //IO.print("\nWould you like a tactile Z button mod? (+$30) (Y/N): ");
             IO.println("\n[ Tactile-Z Mod ]");
             IO.println("Y) Apply Mod (+$30)");
             IO.println("N) None");
@@ -260,14 +262,13 @@ public class DesignScreen
                     break;
 
                 case "N": IO.println("\nNo tactile Z mod added."); runningLoop = false; break;
-                default: IO.println("\nInput not valid. Please enter Y or N.");         break;
+                default: IO.println("\nInvalid input. Try again.");         break;
             }
         }
 // -------------------------------------- [ Step 8: Notch Mod ] -------------------------------------------------------
         runningLoop = true;                                                     
         while (runningLoop)
         {
-           // IO.print("\nWould you like notch mods? (Y/N): ");
             IO.println("\n[ Notch Color ]");
             IO.println("Y) Apply Mod (See Options)");
             IO.println("N) None");
