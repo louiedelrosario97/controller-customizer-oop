@@ -44,7 +44,7 @@ public class ReceiptWriter
 
 
             writer.println("----------------------------------");
-            writer.println("Order Total: $" + order.getOrderTotal());
+            writer.println("Order Total: $%.2f%n" + order.getOrderTotal());
             writer.println("=========================");
 
             System.out.println("Receipt saved to: receipts/" + order.getCustomer().getLastName() + "_" + timestamp + ".txt");

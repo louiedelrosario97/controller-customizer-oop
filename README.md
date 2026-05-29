@@ -6,7 +6,7 @@ From the store's order screen, users can also view their cart. It will display a
 ## Why Customize A GameCube Controller?
 For 20+ years since its release, the GameCube controller layout remains the preferred controller for competitive Super Smash Bros. Melee and Ultimate players. Due to the competitiveness of Super Smash Bros' gaming community, a whole modding industry has grown with different specialized modifications in custom shells, upgraded internals, noise elimination, and precision improvements. This application simulates that custom shop experience.
 
-## Parts of a GameCube Controller - Base Model
+## Step 1: Choose Your Base Model
 | Model | Price | What it is                                                                                                                         |
 |---|---|------------------------------------------------------------------------------------------------------------------------------------|
 | **Indigo** | $45 | The original 2001 launch model in classic indigo purple. Most common, decent internals, good starting point for a budget build     |
@@ -14,6 +14,8 @@ For 20+ years since its release, the GameCube controller layout remains the pref
 | **Smash4 White** | $100 | The rarer white colorway of the 2014 run. Same internals as Smash4 Black but harder to find — collector appeal drives the price up |
 | **New Ultimate** | $50 | Produced in 2018 for *Super Smash Bros. Ultimate*. Similar to the Indigo in quality; a solid mid-range starting point              |
 
+## Step 2 — Cosmetic Customizations
+Users can customize the cosmetics of their controller to personalize their build. The parts that are available for cosmetic design are the controllers outer shell, both analog sticks (Joy Stick/C-Stick), and the buttons which come in a set. 
 
 ## What part does each mod apply to? - LucidChart
 

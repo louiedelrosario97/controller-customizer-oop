@@ -53,21 +53,22 @@ public class Controller implements IPriceable
     }
 
     @Override
-    public String getDetails()
-    { // Needs to print controller base, cosmetic list, and mod list
-        String details = base.getName();
-        details += "   Base Controller (" + base.getName() + "): $" + base.getPrice();
+    public String getDetails() // IC!
+    {
+        String details = "";
+        details += "Base Controller (" + base.getName() + "): " + String.format("$%.2f", base.getPrice());
 
         for (Cosmetic cosmetic : cosmetics)
-        { details += "\n   " + cosmetic.getName() + " (" + cosmetic.getColor() + "): $" + cosmetic.getPrice(); }
+        { details += "\n   " + cosmetic.getName() + " (" + cosmetic.getColor() + "): " + String.format("$%.2f", cosmetic.getPrice()); }
 
         for (Mod mod : mods)
-        { details += "\n   " + mod.getName() + ": $" + mod.getPrice(); }
+        { details += "\n   " + mod.getName() + ": " + String.format("$%.2f", mod.getPrice()); }
 
-        details += "\n   Controller Total: $" + getPrice() + "\n";
+        details += "\n\n   Controller Total: " + String.format("$%.2f", getPrice()) + "\n";
 
         return details;
     }
+
     @Override
     public String toString() { return "\n◆─────────────[ Base Controller: " + base.getName() + " ]─────────────◆"; }
 }

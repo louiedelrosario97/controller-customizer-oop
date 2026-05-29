@@ -65,7 +65,7 @@ public class OrderScreen
     public static void cartDisplay(Cart cart)
     {
         // Controllers
-        IO.println("\nControllers:");
+        IO.println("\nControllers:\n");
         for (int i = 0; i < cart.getControllers().size(); i++)
         {
             Controller controller = cart.getControllers().get(i);
@@ -82,7 +82,7 @@ public class OrderScreen
         }
 
         // Displays cart total
-        System.out.printf("Cart Total: $%.2f%n", cart.getCartTotal());
+        System.out.printf("\nCart Total: $%.2f%n", cart.getCartTotal());
     }
 }
 
