@@ -4,6 +4,7 @@ import com.pluralsight.models.accessory.Accessory;
 import com.pluralsight.models.controller.Controller;
 import com.pluralsight.models.store.Order;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
@@ -16,6 +17,9 @@ public class ReceiptWriter
         LocalDateTime date = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
         String timestamp = date.format(formatter);
+
+        File receiptsFolder = new File("receipts");
+        receiptsFolder.mkdirs();
 
         try (FileOutputStream fileOutputStream = new FileOutputStream("receipts/" + order.getCustomer().getLastName() + "_" + timestamp + ".txt");
              PrintWriter writer = new PrintWriter(fileOutputStream))
@@ -43,7 +47,7 @@ public class ReceiptWriter
             writer.println("Order Total: $" + order.getOrderTotal());
             writer.println("=========================");
 
-            System.out.println("Receipt saved to: receipts/" + order.getCustomer().getFirstName() + "_" + timestamp + ".txt");
+            System.out.println("Receipt saved to: receipts/" + order.getCustomer().getLastName() + "_" + timestamp + ".txt");
         }
         catch (Exception e)
         {
