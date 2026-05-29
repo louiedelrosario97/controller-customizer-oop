@@ -39,7 +39,7 @@ A technician files or adds custom notches to the gate at the exact angles a play
 **(NOTE: This is a controversial mod, as many competitive players believe this mod shows a lack of true skill expression.)**
 
 ## Mod #3 - Trigger Mod
-A small piece of material is placed inside the trigger housing to reduce the total travel distance, so the click happens earlier in the press.
+A change in material (usually the spring) is placed inside the trigger-housing to reduce the total travel distance, so the click happens earlier in the press.
 
 
 ## (Visual) What Part a Mod Applies to - LucidChart
@@ -47,3 +47,6 @@ A small piece of material is placed inside the trigger housing to reduce the tot
 <img width="600" alt="GameCube Controller Mod to Part" src="https://github.com/user-attachments/assets/c0b9b2ba-0c58-4c80-b2a3-0cfe3e9a56ac" />
 
 [ --- View Diagram --- ](https://lucid.app/lucidchart/37de08be-7611-4f5f-a60d-093b011c7c77/edit?viewport_loc=-531%2C-618%2C3648%2C1882%2C0_0&invitationId=inv_81ef67ee-8144-4e86-b14b-93199a46454e)
+
+## Step 4  — Check Cart/Checkout
+When the user has added all the desired products in their cart, 
