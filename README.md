@@ -50,3 +50,6 @@ A change in material (usually the spring) is placed inside the trigger-housing t
 
 ## Step 4  — Check Cart/Checkout
 When the user has added all the desired products in their cart, 
+
+<img width="3952" height="1708" alt="Custom GC-Controller-Diagram" src="https://github.com/user-attachments/assets/18634de5-5970-4e4c-b4a1-568b9f5cb646" />
+
