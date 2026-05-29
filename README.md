@@ -19,6 +19,19 @@ Users can customize the cosmetics of their controller to personalize their build
 ### Cosmetic Examples
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/aac87acb-a915-436b-835f-69b49003348d" />  <img width="410" alt="Screenshot 2026-05-29 081354" src="https://github.com/user-attachments/assets/ef382e59-a650-4118-a309-84d3b9ee0a4a" />
 
+## Step 3 — Hardware Modifications
+Modifications are hardware changes that improves how a controller performs. The modifications make a real and measurable difference in play. In this application, users are able to apply 4 different mods to their build.
+
+## Mod #1 - Snapback Mod 
+When you push the joystick hard in one direction and release it quickly, the stick physically snaps back past center before settling. The controller reads this as a brief unintended input in the opposite direction — called "snapback." This unintended input can cause your character turn the wrong way.
+
+## Mod #2 - Notch Mod
+A technician files or adds custom notches to the gate at the exact angles a player needs. When the stick hits one of these custom notches, it locks into that precise angle. 
+
+**(NOTE: This is a controversial mod, as many competitive players believe this mod shows a lack of true skill expression. You have been warned.)**
+
+## Mod #3 - Trigger Mod
+A small piece of material is placed inside the trigger housing to reduce the total travel distance, so the click happens earlier in the press.
 
 
 ## What part does each mod apply to? - LucidChart
