@@ -48,8 +48,10 @@ A change in material (usually the spring) is placed inside the trigger-housing t
 
 [ --- View Diagram --- ](https://lucid.app/lucidchart/37de08be-7611-4f5f-a60d-093b011c7c77/edit?viewport_loc=-531%2C-618%2C3648%2C1882%2C0_0&invitationId=inv_81ef67ee-8144-4e86-b14b-93199a46454e)
 
-## Step 4  — Check Cart/Checkout
-When the user has added all the desired products in their cart, 
+## (Final) Step 4  — Check Cart/Checkout
+When the user has added all the desired products in their cart, they can 'Check Cart' to see their cart information without commiting to a "Confirm Order?" prompt. When user proceeds to 'Checkout', they are presented their cart info and an option to confirm or cancel.
+## Initial Diagramming Plan
 
-<img width="3952" height="1708" alt="Custom GC-Controller-Diagram" src="https://github.com/user-attachments/assets/18634de5-5970-4e4c-b4a1-568b9f5cb646" />
+
+<img width="1000" alt="Custom GC-Controller-Diagram" src="https://github.com/user-attachments/assets/18634de5-5970-4e4c-b4a1-568b9f5cb646" />
 
